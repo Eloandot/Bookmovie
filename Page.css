@@ -1,0 +1,27 @@
+body {
+    background-color: white;
+}
+.titre-principal { 
+    color: #1C4412;
+    font-family: 'Roboto', sans-serif;
+}
+.petits-texte {
+    font-family: 'Roboto', sans-serif;
+}
+.titre {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+}
+#filtre {
+   background-color: #72A16B ;
+}
+.petits-texte { 
+    font-family: 'Roboto', sans-serif;
+}
+
+.filtre-liste {
+    display: flex;
+    column-gap: 180px;
+}
+.cars {
+}
