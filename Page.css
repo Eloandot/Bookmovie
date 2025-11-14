@@ -27,8 +27,12 @@ body {
 }
 .filtre-liste {
     display: flex;
-    column-gap: 180px;
-    margin-left: 10px;
+    column-gap: 250px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;    /* centre verticalement si nécessaire */
+    margin: 10px 0; 
 }
 #choix { /* Cible le select avec l'id "choix" */
   width: 200px;   /* largeur du select */
