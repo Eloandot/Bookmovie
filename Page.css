@@ -8,20 +8,67 @@ body {
 .petits-texte {
     font-family: 'Roboto', sans-serif;
 }
-.titre {
+.titre-filtre {
     color: #000000;
     font-family: 'Roboto', sans-serif;
+    margin-left: 10px;
 }
 #filtre {
    background-color: #72A16B ;
+   border-radius: 15px;
 }
 .petits-texte { 
     font-family: 'Roboto', sans-serif;
 }
+.texte-filtre {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 
+}
 .filtre-liste {
     display: flex;
     column-gap: 180px;
+    margin-left: 10px;
 }
-.cars {
+#choix { /* Cible le select avec l'id "choix" */
+  width: 200px;   /* largeur du select */
+  height: 35px;   /* hauteur du select */
+  font-size: 16px; /* taille du texte à l'intérieur */
+  padding: 5px;    /* espace interne */
+}
+.movie-card {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+}
+
+.movie-title {
+    font-size: 18px;
+    margin: 10px;
+}
+
+.movie-rating {
+    margin: 0 10px;
+    color: #f39c12; /* couleur dorée pour les étoiles */
+}
+
+.movie-description {
+    font-size: 14px;
+    margin: 10px;
+    color: #555;
+}
+
+.movie-year {
+    font-size: 12px;
+    margin: 10px;
+    color: #888;
 }
