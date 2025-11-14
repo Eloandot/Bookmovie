@@ -114,3 +114,13 @@ nav a:hover {
     height: auto;            /* garde les proportions */
     border-radius: 10px;     /* optionnel */
 }
+
+nav > a {
+    background-color: #8db387;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+nav > a:hover {
+    background-color: #CEECCD;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
