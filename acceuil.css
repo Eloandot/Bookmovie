@@ -1,0 +1,116 @@
+body {
+    background-color: #ffffff;
+}
+
+body {
+      margin: 0;
+      font-family: MExtraBold 800 Italic, sans-serif;
+    }
+    header {
+    position: relative;
+    border: 1px solid #000000;
+    background-color: #72A16B;
+    padding: 30px 0; /* hauteur naturelle */
+}
+
+/* Logo + texte à gauche */
+.logo-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 100px;   /* plus petit logo */
+    height: 100px;
+    margin-right: 8px;
+}
+
+.logo-text {
+    font-size: 40px;  /* texte plus petit */
+    font-weight: bold;
+    color: black;
+}
+
+/* Menu centré */
+nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+nav a:hover {
+    color: #000000;
+}
+.sidebar {
+    width: 200px;            /* largeur de la barre */
+    background-color: #72A16B;
+    padding: 10px;
+    height: 100vh;           /* hauteur = toute la page */
+}
+
+.sidebar ul {
+    list-style: none;        /* retirer les puces */
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: #CEECCD;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.sidebar li:hover {
+    background-color: #ffffff;
+}
+.search-container {
+    position: fixed;      /* barre toujours visible */
+    top: 15px;            /* distance du haut */
+    right: 15px;          /* distance de la droite */
+    z-index: 2000;
+    width: 220px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 35px 10px 10px; /* espace pour la loupe */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.search-container .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 18px;
+}
+.top-image {
+    text-align: center;      /* centre l'image horizontalement */
+    margin-top: 50px;        /* espace depuis le haut, ajustable */
+}
+
+.top-image img {
+    width: 50%;              /* taille moyenne */
+    max-width: 500px;        /* limite maximale */
+    height: auto;            /* garde les proportions */
+    border-radius: 10px;     /* optionnel */
+}
