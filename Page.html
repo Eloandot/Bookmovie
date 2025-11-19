@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Page.css">
+    <title>BookMovie</title>
+    <link rel="stylesheet" href="css/Page.css">
 </head>
 <body>
-    <div> <!--Barre en haut du site --> </div>
+    <div class="topnav">
+    <a class="active" href="#home">Menu</a>
+    <a href="#about">à propos</a>
+    <a href="#contact">Contact</a>
+    <input type="text" placeholder="Search..">
+    </div>
     <div>
-        <h1 class="titre-principal">Mangas adaptés</h1>
+    <!--Barre en haut du site -->
+    </div>
+    <div>
+    <h1 class="titre-principal">Mangas adaptés</h1>
     <p class="petits-texte">Découvrez les mangas qui ont été adaptés en films et séries</p>
     </div>
     <div id="filtre">
@@ -77,4 +85,10 @@
             <p class="movie-year">2015 - Eiichirō Hasumi</p>
         </div>
     </div>
+    <div>
+        <footer class="footer">
+  <p id="texte-footer">&copy; 2025 BookMovie. Tous droits réservés.</p>
+</footer>
+    </div>
+    <script src = "Page.JS"></script>
 </body>
