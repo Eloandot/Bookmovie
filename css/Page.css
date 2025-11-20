@@ -5,13 +5,46 @@ body {
     color: #1C4412;
     font-family: 'Roboto', sans-serif;
 }
-/* Add a black background color to the top navigation bar */
+
+/* Ajoute une couleur de fond noire à la barre de navigation supérieure */
 .topnav {
   overflow: hidden;
   background-color: #72A16B;
 }
+/* CSS du bouton recherche */
+.topnav button {
+  float: right;
+  padding: 6px 12px;
+  margin-top: 8px;
+  margin-right: 5px; /* léger espace entre input et bouton */
+  background-color: #1C4412;
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-/* Style the links inside the navigation bar */
+.topnav button:hover {
+  background-color: #038e5d;
+}
+
+
+nav button {
+    padding: 6px 12px;
+    background-color: #04AA6D;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #038e5d;
+}
+
+/* Style les liens à l'intérieur de la barre de navigation */
 .topnav a {
   float: left;
   display: block;
@@ -22,19 +55,19 @@ body {
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
+/* Change la couleur des liens au survol */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Style the "active" element to highlight the current page */
+/* Style l’élément "actif" pour mettre en valeur la page actuelle */
 .topnav a.active {
   background-color: #1C4412;
   color: white;
 }
 
-/* Style the search box inside the navigation bar */
+/* Style la barre de recherche à l'intérieur de la barre de navigation */
 .topnav input[type=text] {
   float: right;
   padding: 6px;
@@ -44,7 +77,7 @@ body {
   font-size: 17px;
 }
 
-/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+/* Quand l'écran fait moins de 600px de large, empile les liens et le champ de recherche verticalement au lieu de horizontalement */
 @media screen and (max-width: 600px) {
   .topnav a, .topnav input[type=text] {
     float: none;
@@ -54,10 +87,11 @@ body {
     margin: 0;
     padding: 14px;
   }
+}
   .topnav input[type=text] {
     border: 1px solid #ccc;
   }
-}
+
 .petits-texte {
     font-family: 'Roboto', sans-serif;
 }
@@ -142,7 +176,88 @@ body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
-#texte-footer [
+
+.footer {
+    background-color: #72A16B;
+    padding: 40px 20px;
+    color: white;
     font-family: 'Roboto', sans-serif;
-    
-]
+    border-radius: 10px 10px 0 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.footer-col h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #CCE5CC; /* vert clair */
+}
+
+.footer-col a {
+    color: #E6FFE6;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: 0.2s;
+}
+
+.footer-col a:hover {
+    color: #B4FFB4;
+}
+
+/* ---- Colonne logo ---- */
+.logo-col {
+    min-width: 250px;
+}
+
+.footer-logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.join-btn {
+    display: inline-block;
+    background-color: white;
+    color: rgba(0,0,0,0.2);
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    width: fit-content;
+    transition: 0.3s;
+}
+
+.join-btn:hover {
+    background-color: #1c671c;
+    color: #0F280B;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 900px) {
+    .footer-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-col, .logo-col {
+        align-items: center;
+    }
+
+    .join-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
