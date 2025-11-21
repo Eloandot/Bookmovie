@@ -12,8 +12,8 @@
         <a class="active" href="#home">Menu</a>
         <a href="#about">À propos</a>
         <a href="#contact">Contact</a>
-        <button type="submit" id="searchBtn">Rechercher</button>
         <input type="text" placeholder="Rechercher un livre..." id="searchInput">
+        <button type="button" id="searchBtn">Rechercher</button>
     </div>
 
     <!-- Titre principal -->
@@ -28,7 +28,7 @@
         <div class="filtre-liste">
             <div>
                 <p class="texte-filtre">Type</p>
-                <select class="choix">
+                <select id="choixType" class="choix">
                     <option value="all">Tous</option>
                     <option value="books">Livres</option>
                     <option value="mangas">Mangas</option>
@@ -36,7 +36,7 @@
             </div>
             <div>
                 <p class="texte-filtre">Trier par</p>
-                <select class="choix">
+                <select id="choixTri" class="choix">
                     <option value="title">Ordre alphabétique</option>
                     <option value="year">Le plus récent</option>
                 </select>
@@ -49,22 +49,16 @@
         <!-- Les résultats de la recherche apparaîtront ici -->
     </div>
 
-    <script src="js/main.js"></script>
-</body>
-</html>
-
-    </div>
-     <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-
             <!-- Colonne Logo -->
             <div class="footer-col logo-col">
                 <img src="image/logobm.jpg" alt="Logo" class="footer-logo">
                 <a href="#" class="join-btn">Rejoindre la communauté</a>
             </div>
 
-            <!-- Colonne 1 -->
+            <!-- Autres colonnes -->
             <div class="footer-col">
                 <h3>Les bases</h3>
                 <a href="#">À propos</a>
@@ -73,16 +67,12 @@
                 <a href="#">API Business</a>
                 <a href="#">Statut du système</a>
             </div>
-
-            <!-- Colonne 2 -->
             <div class="footer-col">
                 <h3>S'impliquer</h3>
                 <a href="#">Ajouter un film</a>
                 <a href="#">Ajouter une série</a>
                 <a href="#">Contributions</a>
             </div>
-
-            <!-- Colonne 3 -->
             <div class="footer-col">
                 <h3>Communauté</h3>
                 <a href="#">Règles</a>
@@ -90,8 +80,6 @@
                 <a href="#">Top contributeurs</a>
                 <a href="#">Assistance</a>
             </div>
-
-            <!-- Colonne 4 -->
             <div class="footer-col">
                 <h3>Mentions légales</h3>
                 <a href="#">Conditions d’utilisation</a>
@@ -99,9 +87,10 @@
                 <a href="#">API – Conditions</a>
                 <a href="#">Politiques de droits</a>
             </div>
-
         </div>
     </footer>
+
+    <!-- Script JS -->
+    <script src="js/Page.js" defer></script>
 </body>
 </html>
-<script src="Page.js" defer></script>

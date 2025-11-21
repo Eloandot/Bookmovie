@@ -6,10 +6,10 @@ const choixTri = document.getElementById("choixTri");
 
 // Fonction pour rechercher les livres via Open Library
 function searchBooks(query) {
-    // Ajouter le filtre Type
+    // Filtre Type
     let typeFilter = choixType.value;
-    if(typeFilter === "mangas") query = "manga " + query;
-    else if(typeFilter === "books" && query.trim() === "") query = "book";
+    if (typeFilter === "mangas") query = "manga " + query;
+    else if (typeFilter === "books" && query.trim() === "") query = "book";
 
     const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`;
 
@@ -22,17 +22,17 @@ function searchBooks(query) {
 
             // Tri des résultats
             let tri = choixTri.value;
-            if(tri === "title") {
+            if (tri === "title") {
                 data.docs.sort((a, b) => a.title.localeCompare(b.title));
-            } else if(tri === "year") {
+            } else if (tri === "year") {
                 data.docs.sort((a, b) => (b.first_publish_year || 0) - (a.first_publish_year || 0));
             }
 
-            data.docs.slice(0, 12).forEach(book => { // max 12 résultats
+            data.docs.slice(0, 12).forEach(book => {
                 const bookDiv = document.createElement("div");
-                bookDiv.classList.add("movie-card"); // réutilisation du style existant
+                bookDiv.classList.add("movie-card");
 
-                // Couverture du livre
+                // Couverture
                 if (book.cover_i) {
                     const img = document.createElement("img");
                     img.src = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
@@ -50,7 +50,7 @@ function searchBooks(query) {
                 author.textContent = book.author_name ? book.author_name.join(", ") : "Auteur inconnu";
                 bookDiv.appendChild(author);
 
-                // Année de publication
+                // Année
                 const year = document.createElement("p");
                 year.textContent = book.first_publish_year || "Année inconnue";
                 bookDiv.appendChild(year);
@@ -64,11 +64,11 @@ function searchBooks(query) {
         });
 }
 
-// Lancer la recherche lors du clic sur le bouton
+// Recherche au clic
 searchBtn.addEventListener("click", () => {
     const query = searchInput.value.trim();
-    if(query || choixType.value !== "all") searchBooks(query);
+    if (query || choixType.value !== "all") searchBooks(query);
 });
 
-// Recherche automatique au chargement si tu veux afficher quelques livres par défaut
+// Optionnel : afficher quelques livres par défaut
 searchBooks("Manga");
