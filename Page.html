@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,133 +7,101 @@
     <link rel="stylesheet" href="css/Page.css">
 </head>
 <body>
+    <!-- Barre de menu -->
     <div class="topnav">
         <a class="active" href="#home">Menu</a>
         <a href="#about">À propos</a>
         <a href="#contact">Contact</a>
-        <button type="submit">Rechercher</button>
-        <input type="text" placeholder="Search.."  >
-         
+        <button type="submit" id="searchBtn">Rechercher</button>
+        <input type="text" placeholder="Rechercher un livre..." id="searchInput">
     </div>
+
+    <!-- Titre principal -->
     <div>
-    <!--Barre en haut du site -->
+        <h1 class="titre-principal">Livres et Mangas</h1>
+        <p class="petits-texte">Découvrez les livres et mangas de votre choix</p>
     </div>
-    <div>
-    <h1 class="titre-principal">Mangas adaptés</h1>
-    <p class="petits-texte">Découvrez les mangas qui ont été adaptés en films et séries</p>
-    </div>
+
+    <!-- Section Filtres -->
     <div id="filtre">
         <h2 class="titre-filtre">Filtres</h2>
         <div class="filtre-liste">
             <div>
-                <p class="texte-filtre">Type de média</p>
-                <select id="choix">
-                    <option value="1">Films</option>
-                    <option value="2">Séries</option>
+                <p class="texte-filtre">Type</p>
+                <select class="choix">
+                    <option value="all">Tous</option>
+                    <option value="books">Livres</option>
+                    <option value="mangas">Mangas</option>
                 </select>
             </div>
             <div>
-                <P class="texte-filtre">Trier par</P>
-                <select id="choix">
-                    <option value="1">Genre</option>
-                    <option value="2">Ordre alphabétique</option>
-                    <option value="3">le plus réçent</option>
+                <p class="texte-filtre">Trier par</p>
+                <select class="choix">
+                    <option value="title">Ordre alphabétique</option>
+                    <option value="year">Le plus récent</option>
                 </select>
             </div>
         </div>
+    </div>
+
+    <!-- Résultats -->
+    <div class="Movies" id="results">
+        <!-- Les résultats de la recherche apparaîtront ici -->
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
 
     </div>
-    <div class="Movies">
-        <div class="movie-card">
-            <img src="https://tse3.mm.bing.net/th/id/OIP.K8ycCCpFBaUrjfAOugrKEQEsC7?cb=ucfimg2&pid=Api&ucfimg=1" alt="Demon Slayer" class="movie-poster">
-            <h2 class="movie-title">Demon slayer </h2>
-            <p class="movie-rating">⭐4.3</p>
-            <p class="movie-description">Haruo Sotozaki offre une adaptation musicale puissante du classique de Kimetsu no Yaiba...</p>
-            <p class="movie-year">2025 - Haruo Sotozaki</p>
-        </div>
-        <div class="movie-card">
-            <img src="https://tse1.mm.bing.net/th/id/OIP.dzwncBJl4XxifkIQZhGNiAHaEK?cb=ucfimg2&pid=Api&ucfimg=1" alt="Jujutsu Kaisen" class="movie-poster">
-            <h2 class="movie-title">Jujutsu Kaisen 0 </h2>
-            <p class="movie-rating">⭐4.5</p>
-            <p class="movie-description">Jujutsu Kaisen 0 est un film japonais réalisé par Park Seong-hu, sorti en 2021. Il s'agit de l'adaptation du prologue du manga Jujutsu Kaisen.</p>
-            <p class="movie-year">2021 - Park Seong-hu</p>
-        </div>
-        <div class="movie-card">
-            <img src="https://tse1.mm.bing.net/th/id/OIP.RSocTheL4I57TkuQRRtAuwHaEK?cb=ucfimg2&pid=Api&ucfimg=1" alt="Bleach" class="movie-poster">
-            <h2 class="movie-title">Bleach</h2>
-            <p class="movie-rating">⭐3</p>
-            <p class="movie-description">Bleach est un film d'action fantasy japonais coécrit et réalisé par Shinsuke Satō, sorti en 2018. Il s'agit de l'adaptation du manga éponyme de Tite Kubo.</p>
-            <p class="movie-year">2018 - Shinsuke Satō</p>
-        </div>
-        <div class="movie-card">
-            <img src="https://tse2.mm.bing.net/th/id/OIP.3d8OWfZF1rIIyvf-xQZywgHaEK?cb=ucfimg2&pid=Api&ucfimg=1" alt="GTO le film" class="movie-poster">
-            <h2 class="movie-title">GTO, le film</h2>
-            <p class="movie-rating">⭐4,3</p>
-            <p class="movie-description">Eikichi Onizuka est un jeune professeur remplaçant de 26 ans. Kaoru Kitajima quand à elle est journaliste et est sur les traces d'un criminel ayant agressé plusieurs femmes. Le professeur est le premier suspect de la jeune femme, en partie à causes de ses méthodes d'enseignement très partucilères...Ce film est l'adaptation de la série ...</p>
-            <p class="movie-year">1999 - Masayuki Suzuki</p>
-        </div>
-        <div class="movie-card">
-            <img src="https://tse3.mm.bing.net/th/id/OIP.AwDpQxHsEvARi1_X-pK01AHaEK?cb=ucfimg2&pid=Api&ucfimg=1" alt="Kenshin : kyoto Inferno" class="movie-poster">
-            <h2 class="movie-title">Kenshin : Kyoto Inferno</h2>
-            <p class="movie-rating">⭐3</p>
-            <p class="movie-description">Une nouvelle vie commence pour Kenshin jusqu'au jour où il est appelé par le gouvernement. Un assassin a été trahi et laissé pour mort.</p>
-            <p class="movie-year">2014 - Shinsuke Keishi Ōtomo</p>
-        </div>
-        <div class="movie-card">
-            <img src="https://tse4.mm.bing.net/th/id/OIP.5myQo-XHIswQYr_AvrFOCAHaD4?pid=Api" alt="Assassination Classroom" class="movie-poster">
-            <h2 class="movie-title">Assassination Classroom</h2>
-            <p class="movie-rating">⭐2.25</p>
-            <p class="movie-description">Une créature a détruit la Lune et souhaite s'attaquer à la Terre. Cette créature est nommée professeur principale d'une classe de collège et les élèves doivent l'anéantir.</p>
-            <p class="movie-year">2015 - Eiichirō Hasumi</p>
-        </div>
-    </div>
-    <div>
-       <footer class="footer">
+     <!-- Footer -->
+    <footer class="footer">
         <div class="footer-container">
 
-        <!-- Colonne Logo -->
-        <div class="footer-col logo-col">
-            <img src="/mnt/data/a941ded8-c446-4a56-a3fc-71ba19622ffc.png" alt="Logo" class="footer-logo">
-            <a href="#" class="join-btn">Rejoindre la communauté</a>
-        </div>
+            <!-- Colonne Logo -->
+            <div class="footer-col logo-col">
+                <img src="image/logobm.jpg" alt="Logo" class="footer-logo">
+                <a href="#" class="join-btn">Rejoindre la communauté</a>
+            </div>
 
-        <!-- Colonne 1 -->
-        <div class="footer-col">
-            <h3>Les bases</h3>
-            <a href="#">À propos</a>
-            <a href="#">Contact</a>
-            <a href="#">API Documentation</a>
-            <a href="#">API Business</a>
-            <a href="#">Statut du système</a>
-        </div>
+            <!-- Colonne 1 -->
+            <div class="footer-col">
+                <h3>Les bases</h3>
+                <a href="#">À propos</a>
+                <a href="#">Contact</a>
+                <a href="#">API Documentation</a>
+                <a href="#">API Business</a>
+                <a href="#">Statut du système</a>
+            </div>
 
-        <!-- Colonne 2 -->
-        <div class="footer-col">
-            <h3>S'impliquer</h3>
-            <a href="#">Ajouter un film</a>
-            <a href="#">Ajouter une série</a>
-            <a href="#">Contributions</a>
-        </div>
+            <!-- Colonne 2 -->
+            <div class="footer-col">
+                <h3>S'impliquer</h3>
+                <a href="#">Ajouter un film</a>
+                <a href="#">Ajouter une série</a>
+                <a href="#">Contributions</a>
+            </div>
 
-        <!-- Colonne 3 -->
-        <div class="footer-col">
-            <h3>Communauté</h3>
-            <a href="#">Règles</a>
-            <a href="#">Discussions</a>
-            <a href="#">Top contributeurs</a>
-            <a href="#">Assistance</a>
-        </div>
+            <!-- Colonne 3 -->
+            <div class="footer-col">
+                <h3>Communauté</h3>
+                <a href="#">Règles</a>
+                <a href="#">Discussions</a>
+                <a href="#">Top contributeurs</a>
+                <a href="#">Assistance</a>
+            </div>
 
-        <!-- Colonne 4 -->
-        <div class="footer-col">
-            <h3>Mentions légales</h3>
-            <a href="#">Conditions d’utilisation</a>
-            <a href="#">Confidentialité</a>
-            <a href="#">API – Conditions</a>
-            <a href="#">Politiques de droits</a>
+            <!-- Colonne 4 -->
+            <div class="footer-col">
+                <h3>Mentions légales</h3>
+                <a href="#">Conditions d’utilisation</a>
+                <a href="#">Confidentialité</a>
+                <a href="#">API – Conditions</a>
+                <a href="#">Politiques de droits</a>
+            </div>
+
         </div>
-    </div>
-</footer>
-    </div>
-    <script src = "Page.JS"></script>
+    </footer>
 </body>
+</html>
+<script src="Page.js" defer></script>

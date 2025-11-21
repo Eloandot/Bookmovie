@@ -24,7 +24,10 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
-
+.placeholder-text {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
 .topnav button:hover {
   background-color: #038e5d;
 }
@@ -121,11 +124,12 @@ nav button:hover {
     align-items: center;    /* centre verticalement si nécessaire */
     margin: 10px 0; 
 }
-#choix { /* Cible le select avec l'id "choix" */
-  width: 200px;   /* largeur du select */
-  height: 35px;   /* hauteur du select */
+.choix { /* Cible le select avec l'id "choix" */
+  width: 300;   /* largeur du select */
+  height: 30px;   /* hauteur du select */
   font-size: 16px; /* taille du texte à l'intérieur */
   padding: 5px;    /* espace interne */
+  border-radius: 10px;
 }
 .movie-card {
     width: 250px;
@@ -170,19 +174,12 @@ nav button:hover {
   height: 400px;           /* pour montrer l'alignement vertical */
 }
 .footer {
-    background-color: #72A16B;
-    padding: 15px;
-    border-radius: 7px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-}
-
-.footer {
-    background-color: #72A16B;
+    background: linear-gradient(to bottom, #72A16B, #1C4412);
     padding: 40px 20px;
     color: white;
     font-family: 'Roboto', sans-serif;
     border-radius: 10px 10px 0 0;
+    text-align: center;
 }
 
 .footer-container {
