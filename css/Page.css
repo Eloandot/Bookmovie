@@ -131,21 +131,6 @@ nav button:hover {
   padding: 5px;    /* espace interne */
   border-radius: 10px;
 }
-.movie-card {
-    width: 250px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    overflow: hidden;
-    margin: 20px;
-    font-family: Arial, sans-serif;
-}
-
-.movie-poster {
-    width: 100%;
-    height: auto;
-}
-
 .movie-title {
     font-size: 18px;
     margin: 10px;
@@ -155,19 +140,7 @@ nav button:hover {
     margin: 0 10px;
     color: #f39c12; /* couleur dorée pour les étoiles */
 }
-
-.movie-description {
-    font-size: 14px;
-    margin: 10px;
-    color: #555;
-}
-
-.movie-year {
-    font-size: 12px;
-    margin: 10px;
-    color: #888;
-}
-.Movies {
+.Livres {
   display: flex;           /* active flexbox */
   justify-content: start; /* aligne horizontalement : flex-start, flex-end, space-between */
   gap: 10px;               /* espace entre les éléments */
@@ -226,7 +199,7 @@ nav button:hover {
 
 .join-btn {
     display: inline-block;
-    background-color: white;
+    background-color: #0F280B;
     color: rgba(0,0,0,0.2);
     padding: 12px 18px;
     border-radius: 8px;
