@@ -1,9 +1,9 @@
 body {
     background-color: white;
+    font-family: 'Roboto', sans-serif;
 }
 .titre-principal { 
     color: #1C4412;
-    font-family: 'Roboto', sans-serif;
 }
 
 /* Barre de navigation */
@@ -23,9 +23,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
-.topnav button:hover {
-  background-color: #038e5d;
-}
+.topnav button:hover { background-color: #038e5d; }
 
 .topnav a {
   float: left;
@@ -36,25 +34,16 @@ body {
   text-decoration: none;
   font-size: 17px;
 }
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #1C4412;
-  color: white;
-}
+.topnav a:hover { background-color: #ddd; color: black; }
+.topnav a.active { background-color: #1C4412; color: white; }
 
 .topnav input[type=text] {
   float: right;
   padding: 6px;
-  border: none;
+  border: 1px solid #ccc;
   margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
-  border: 1px solid #ccc;
 }
 
 /* Responsive */
@@ -68,46 +57,41 @@ body {
   }
 }
 
-.petits-texte {
-    font-family: 'Roboto', sans-serif;
-}
+.petits-texte { font-family: 'Roboto', sans-serif; }
 
 #filtre {
    background-color: #72A16B;
    border-radius: 15px;
+   padding: 10px 0;
+   margin: 10px 0;
 }
-
-.titre-filtre {
-    color: #000000;
-    font-family: 'Roboto', sans-serif;
-    margin-left: 10px;
-}
-
-.texte-filtre {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
-
-.filtre-liste {
-    display: flex;
-    justify-content: center;
-    column-gap: 250px;
-}
-
-.choix {
-  width: 300px;
-  height: 30px;
-  font-size: 16px;
-  padding: 5px;
-  border-radius: 10px;
-}
+.titre-filtre { color: #000000; margin-left: 10px; }
+.texte-filtre { text-align: center; }
+.filtre-liste { display: flex; justify-content: center; column-gap: 250px; }
+.choix { width: 300px; height: 30px; font-size: 16px; padding: 5px; border-radius: 10px; }
 
 /* Résultats */
 .Livres {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   padding: 20px;
+  justify-content: center;
+}
+.movie-card {
+    width: 180px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+.movie-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 8px;
 }
 
 /* Footer */
@@ -115,11 +99,9 @@ body {
     background: linear-gradient(to bottom, #72A16B, #1C4412);
     padding: 40px 20px;
     color: white;
-    font-family: 'Roboto', sans-serif;
     border-radius: 10px 10px 0 0;
     text-align: center;
 }
-
 .footer-container {
     max-width: 1200px;
     margin: auto;
@@ -128,18 +110,8 @@ body {
     flex-wrap: wrap;
     gap: 40px;
 }
-
-.footer-col {
-    display: flex;
-    flex-direction: column;
-    min-width: 150px;
-}
-
-.footer-logo {
-    width: 180px;
-    margin-bottom: 20px;
-}
-
+.footer-col { display: flex; flex-direction: column; min-width: 150px; }
+.footer-logo { width: 180px; margin-bottom: 20px; }
 .join-btn {
     display: inline-block;
     background-color: #0F280B;
@@ -149,13 +121,9 @@ body {
     font-weight: bold;
     transition: 0.3s;
 }
+.join-btn:hover { background-color: #1c671c; color: #fff; }
 
-.join-btn:hover {
-    background-color: #1c671c;
-    color: #fff;
-}
-
-/* --- POPUP INSCRIPTION --- */
+/* Popup */
 .modal {
     display: none;
     position: fixed;
@@ -168,7 +136,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .modal-content {
     background: #ffffff;
     padding: 25px;
@@ -177,19 +144,12 @@ body {
     border: 2px solid #72A16B;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
     animation: pop 0.3s ease;
-    font-family: 'Roboto', sans-serif;
 }
-
 @keyframes pop {
     from { transform: scale(0.7); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
-
-.modal-content h2 {
-    text-align: center;
-    color: #1C4412;
-}
-
+.modal-content h2 { text-align: center; color: #1C4412; }
 .close {
     float: right;
     font-size: 24px;
@@ -197,22 +157,9 @@ body {
     cursor: pointer;
     color: #1C4412;
 }
-.close:hover {
-    color: #72A16B;
-}
-
-#formInscription {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-#formInscription input {
-    padding: 8px;
-    border: 1px solid #72A16B;
-    border-radius: 8px;
-}
-
+.close:hover { color: #72A16B; }
+#formInscription { display: flex; flex-direction: column; gap: 12px; }
+#formInscription input { padding: 8px; border: 1px solid #72A16B; border-radius: 8px; }
 .submit-btn {
     background: #1C4412;
     color: white;
@@ -222,6 +169,4 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
-.submit-btn:hover {
-    background: #2f7420;
-}
+.submit-btn:hover { background: #2f7420; }

@@ -20,11 +20,8 @@ function searchBooks(query) {
             resultsDiv.textContent = "";
 
             let tri = choixTri.value;
-            if (tri === "title") {
-                data.docs.sort((a, b) => a.title.localeCompare(b.title));
-            } else if (tri === "year") {
-                data.docs.sort((a, b) => (b.first_publish_year || 0) - (a.first_publish_year || 0));
-            }
+            if (tri === "title") data.docs.sort((a, b) => a.title.localeCompare(b.title));
+            else if (tri === "year") data.docs.sort((a, b) => (b.first_publish_year||0) - (a.first_publish_year||0));
 
             data.docs.slice(0, 12).forEach(book => {
                 const bookDiv = document.createElement("div");
@@ -66,43 +63,23 @@ searchBtn.addEventListener("click", () => {
 // Afficher quelques mangas par défaut
 searchBooks("Manga");
 
-/* ------------------------------
-    POPUP D'INSCRIPTION
------------------------------- */
-
+// Popup inscription
 const popup = document.getElementById("popupInscription");
 const joinBtn = document.querySelector(".join-btn");
 const closeBtn = document.querySelector(".close");
 const formInscription = document.getElementById("formInscription");
 
-joinBtn.addEventListener("click", () => {
-    popup.style.display = "flex";
-});
-
-closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-});
-
-window.addEventListener("click", (e) => {
-    if (e.target === popup) {
-        popup.style.display = "none";
-    }
-});
+joinBtn.addEventListener("click", () => popup.style.display = "flex");
+closeBtn.addEventListener("click", () => popup.style.display = "none");
+window.addEventListener("click", (e) => { if(e.target===popup) popup.style.display="none"; });
 
 formInscription.addEventListener("submit", (e) => {
     e.preventDefault();
-
     const nom = document.getElementById("nom").value.trim();
     const prenom = document.getElementById("prenom").value.trim();
     const email = document.getElementById("email").value.trim();
-
-    if (!nom || !prenom || !email) {
-        alert("Merci de remplir tous les champs.");
-        return;
-    }
-
+    if (!nom || !prenom || !email) { alert("Merci de remplir tous les champs."); return; }
     alert(`Merci ${prenom}, votre inscription a bien été envoyée !`);
     popup.style.display = "none";
-
     formInscription.reset();
 });
