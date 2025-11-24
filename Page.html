@@ -64,21 +64,6 @@
                 <a href="#">À propos</a>
                 <a href="#">Contact</a>
                 <a href="#">API Documentation</a>
-                <a href="#">API Business</a>
-                <a href="#">Statut du système</a>
-            </div>
-            <div class="footer-col">
-                <h3>S'impliquer</h3>
-                <a href="#">Ajouter un film</a>
-                <a href="#">Ajouter une série</a>
-                <a href="#">Contributions</a>
-            </div>
-            <div class="footer-col">
-                <h3>Communauté</h3>
-                <a href="#">Règles</a>
-                <a href="#">Discussions</a>
-                <a href="#">Top contributeurs</a>
-                <a href="#">Assistance</a>
             </div>
             <div class="footer-col">
                 <h3>Mentions légales</h3>
@@ -89,6 +74,26 @@
             </div>
         </div>
     </footer>
+
+    <!-- Popup d'inscription -->
+    <div id="popupInscription" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Rejoindre la communauté</h2>
+            <form id="formInscription">
+                <label>Nom :</label>
+                <input type="text" id="nom" required>
+
+                <label>Prénom :</label>
+                <input type="text" id="prenom" required>
+
+                <label>Adresse email :</label>
+                <input type="email" id="email" required>
+
+                <button type="submit" class="submit-btn">S'inscrire</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Script JS -->
     <script src="js/Page.js" defer></script>
