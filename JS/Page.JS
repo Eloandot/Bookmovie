@@ -3,6 +3,9 @@ const searchBtn = document.getElementById("searchBtn");
 const searchInput = document.getElementById("searchInput");
 const choixType = document.getElementById("choixType");
 const choixTri = document.getElementById("choixTri");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const carousel = resultsDiv;
 
 // Fonction de recherche
 function searchBooks(query) {
@@ -11,75 +14,75 @@ function searchBooks(query) {
     else if (typeFilter === "books" && query.trim() === "") query = "book";
 
     const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`;
-
     resultsDiv.textContent = "Chargement...";
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
             resultsDiv.textContent = "";
-
             let tri = choixTri.value;
-            if (tri === "title") data.docs.sort((a, b) => a.title.localeCompare(b.title));
-            else if (tri === "year") data.docs.sort((a, b) => (b.first_publish_year||0) - (a.first_publish_year||0));
+            if (tri === "title") data.docs.sort((a,b)=>a.title.localeCompare(b.title));
+            else if (tri === "year") data.docs.sort((a,b)=>(b.first_publish_year||0)-(a.first_publish_year||0));
 
-            data.docs.slice(0, 12).forEach(book => {
-                const bookDiv = document.createElement("div");
+            data.docs.slice(0,12).forEach(book=>{
+                const bookDiv=document.createElement("div");
                 bookDiv.classList.add("movie-card");
 
-                if (book.cover_i) {
-                    const img = document.createElement("img");
-                    img.src = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
-                    img.classList.add("movie-poster");
-                    bookDiv.appendChild(img);
-                }
+                const img=document.createElement("img");
+                img.classList.add("movie-poster");
+                img.src = book.cover_i ? 
+                    `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : 
+                    "image/placeholder.jpg";
+                bookDiv.appendChild(img);
 
-                const title = document.createElement("h3");
+                const title=document.createElement("h3");
                 title.textContent = book.title;
                 bookDiv.appendChild(title);
 
-                const author = document.createElement("p");
-                author.textContent = book.author_name ? book.author_name.join(", ") : "Auteur inconnu";
+                const author=document.createElement("p");
+                author.textContent=book.author_name?book.author_name.join(", "):"Auteur inconnu";
                 bookDiv.appendChild(author);
 
-                const year = document.createElement("p");
-                year.textContent = book.first_publish_year || "Année inconnue";
+                const year=document.createElement("p");
+                year.textContent=book.first_publish_year||"Année inconnue";
                 bookDiv.appendChild(year);
 
                 resultsDiv.appendChild(bookDiv);
             });
         })
-        .catch(error => {
-            resultsDiv.textContent = "Impossible de charger les livres.";
+        .catch(error=>{
+            resultsDiv.textContent="Impossible de charger les livres.";
             console.error(error);
         });
 }
 
-searchBtn.addEventListener("click", () => {
-    const query = searchInput.value.trim();
-    if (query || choixType.value !== "all") searchBooks(query);
-});
+// Recherche
+searchBtn.addEventListener("click",()=>{const query=searchInput.value.trim(); if(query||choixType.value!=="all") searchBooks(query);});
 
-// Afficher quelques mangas par défaut
+// Afficher mangas par défaut
 searchBooks("Manga");
 
+// Carrousel boutons
+prevBtn.addEventListener("click",()=>{carousel.scrollBy({left:-220,behavior:'smooth'});});
+nextBtn.addEventListener("click",()=>{carousel.scrollBy({left:220,behavior:'smooth'});});
+
 // Popup inscription
-const popup = document.getElementById("popupInscription");
-const joinBtn = document.querySelector(".join-btn");
-const closeBtn = document.querySelector(".close");
-const formInscription = document.getElementById("formInscription");
+const popup=document.getElementById("popupInscription");
+const joinBtn=document.querySelector(".join-btn");
+const closeBtn=document.querySelector(".close");
+const formInscription=document.getElementById("formInscription");
 
-joinBtn.addEventListener("click", () => popup.style.display = "flex");
-closeBtn.addEventListener("click", () => popup.style.display = "none");
-window.addEventListener("click", (e) => { if(e.target===popup) popup.style.display="none"; });
+joinBtn.addEventListener("click",()=>popup.style.display="flex");
+closeBtn.addEventListener("click",()=>popup.style.display="none");
+window.addEventListener("click",(e)=>{if(e.target===popup) popup.style.display="none";});
 
-formInscription.addEventListener("submit", (e) => {
+formInscription.addEventListener("submit",(e)=>{
     e.preventDefault();
-    const nom = document.getElementById("nom").value.trim();
-    const prenom = document.getElementById("prenom").value.trim();
-    const email = document.getElementById("email").value.trim();
-    if (!nom || !prenom || !email) { alert("Merci de remplir tous les champs."); return; }
+    const nom=document.getElementById("nom").value.trim();
+    const prenom=document.getElementById("prenom").value.trim();
+    const email=document.getElementById("email").value.trim();
+    if(!nom||!prenom||!email){alert("Merci de remplir tous les champs.");return;}
     alert(`Merci ${prenom}, votre inscription a bien été envoyée !`);
-    popup.style.display = "none";
+    popup.style.display="none";
     formInscription.reset();
 });
