@@ -8,23 +8,24 @@
     <link rel="stylesheet" href="css/Page.css">
 </head>
 <body>
+
     <!-- Barre de menu -->
     <div class="topnav">
-        <a class="active" href="#home">Menu</a>
-        <a href="#about">À propos</a>
-        <a href="#contact">Contact</a>
+        <a class="active" href="#">Menu</a>
+        <a href="#">À propos</a>
+        <a href="#">Contact</a>
         <input type="text" placeholder="Rechercher un livre..." id="searchInput">
         <button type="button" id="searchBtn">Rechercher</button>
     </div>
 
     <!-- Titre principal -->
-    <div>
+    <header>
         <h1 class="titre-principal">Livres et Mangas</h1>
         <p class="petits-texte">Découvrez les livres et mangas de votre choix</p>
-    </div>
+    </header>
 
     <!-- Section Filtres -->
-    <div id="filtre">
+    <section id="filtre">
         <h2 class="titre-filtre">Filtres</h2>
         <div class="filtre-liste">
             <div>
@@ -43,14 +44,12 @@
                 </select>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Carrousel des résultats -->
     <div class="carousel-wrapper">
         <button id="prevBtn" class="carousel-btn">&#10094;</button>
-        <div class="Livres" id="results">
-            <!-- Les cartes s'affichent ici -->
-        </div>
+        <div class="Livres" id="results"></div>
         <button id="nextBtn" class="carousel-btn">&#10095;</button>
     </div>
 
