@@ -10,13 +10,16 @@
 <body>
 
     <!-- Barre de menu -->
-    <div class="topnav">
-        <a class="active" href="#">Menu</a>
-        <a href="#">À propos</a>
-        <a href="#">Contact</a>
-        <input type="text" placeholder="Rechercher un livre..." id="searchInput">
-        <button type="button" id="searchBtn">Rechercher</button>
-    </div>
+    <nav class="topnav">
+        <a class="active" href="#home">Menu</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+
+        <div class="search-container">
+            <input type="text" placeholder="Rechercher un livre..." id="searchInput">
+            <button type="button" id="searchBtn">Rechercher</button>
+        </div>
+    </nav>
 
     <!-- Titre principal -->
     <header>
@@ -43,22 +46,26 @@
                     <option value="year">Le plus récent</option>
                 </select>
             </div>
+            <div>
+                <p class="texte-filtre">&nbsp;</p>
+                <button id="filterBtn" class="filter-btn">Filtrer</button>
+            </div>
         </div>
     </section>
 
-    <!-- Carrousel des résultats -->
+    <!-- Carrousel horizontal scrollable -->
     <div class="carousel-wrapper">
-        <button id="prevBtn" class="carousel-btn">&#10094;</button>
-        <div class="Livres" id="results"></div>
-        <button id="nextBtn" class="carousel-btn">&#10095;</button>
+        <div class="Livres" id="results">
+            <!-- Cartes générées par JS -->
+        </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col logo-col">
-                <img src="image/logobm.jpg" alt="Logo" class="footer-logo">
-                <a href="#" class="join-btn">Rejoindre la communauté</a>
+                <img src="image/logobm.jpg" alt="Logo BookMovie" class="footer-logo">
+                <button class="join-btn">Rejoindre la communauté</button>
             </div>
             <div class="footer-col">
                 <h3>Les bases</h3>
@@ -76,10 +83,10 @@
         </div>
     </footer>
 
-    <!-- Popup d'inscription -->
+    <!-- Popup inscription -->
     <div id="popupInscription" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <button class="close">&times;</button>
             <h2>Rejoindre la communauté</h2>
             <form id="formInscription">
                 <label>Nom :</label>
