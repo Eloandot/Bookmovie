@@ -57,14 +57,16 @@ function searchBooks(query) {
                 const bookDiv = document.createElement("div");
                 bookDiv.classList.add("movie-card");
 
-                // Image
-                const img = document.createElement("img");
-                img.src = book.cover_i ? 
-                          `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : 
-                          "image/placeholder.jpg";
-                img.classList.add("movie-poster");
-                img.loading = 'lazy';
-                bookDiv.appendChild(img);
+            // --- Afficher uniquement si le livre a une image ---
+            if (!book.cover_i) return; // saute ce livre s'il n'a pas d'image
+            const img = document.createElement("img");
+            img.src = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
+            img.classList.add("movie-poster");
+            img.loading = 'lazy';
+            bookDiv.appendChild(img);
+
+                
+                
 
                 // Titre
                 const title = document.createElement("h3");
