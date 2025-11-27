@@ -1,45 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Movie</title>
+    <title>Bookmovie</title>
+
     <link rel="stylesheet" href="acceuil.css">
+    ‌<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
 <body>
-    <header>
-    <!-- Logo et titre -->
-    <div class="logo-container">
-      <img src="logo.png" alt="Logo">
-      <div class="logo-text">Book Movie</div>
+
+  <!--Barre de navigation-->
+ <nav class="topnav">
+        <a class="active" href="#home">Recherche</a>
+        <a href="#about">À propos</a>
+        <a href="Contact.html">Contact</a>
+        <div class="seabutton>rch-container">
+          
+        </div>
+    </nav>
+
+  <!--Carrousel-->
+  <section class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide"><img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421539591/one-piece-vol-59-9781421539591_lg.jpg" alt="one piece"></li>
+        <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/71pL3SNc13L._SY466_.jpg" alt="la femme de menage"></li>
+        <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/51BTfQsu58L._SY445_SX342_ML2_.jpg" alt="harry potter"></li>
+        <li class="splide__slide"><img src="https://cdn.cultura.com/cdn-cgi/image/width=1280/media/pim/16_2d308c44-6382-48e8-8d4a-94422fed8bf6.jpeg" alt=""></li>
+        <li class="splide__slide"><img src="https://media.senscritique.com/media/000023160825/300/le_boyfriend.jpg" alt="le boyfriends"></li>
+        <li class="splide__slide"><img src="https://images.amazon.com/images/P/2092496174.L.jpg" alt="Tant que fleuririons les citronniers"></li>
+        <li class="splide__slide"><img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421518626/naruto-vol-26-9781421518626_lg.jpg" alt="naruto"></li>
+        <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/41jBa+2kKKL._SY445_SX342_ML2_.jpg" alt="palestine"></li>
+        <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/41QoYfMluPL.jpg" alt="One punch man"></li>
+        <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/71BaBz2cBLL._SY466_.jpg" alt="Dragonball"></li>
+        <li class="splide__slide"><img src="https://media.senscritique.com/media/000016911184/300/les_animaux_fantastiques.jpg" alt="Animeaux les_animaux_fantastiques"></li>
+        <li class="splide__slide"><img src="https://actu.nathan.fr/fichiers/bd_lecture.png" alt="ouïghours"></li>
+      </ul>
+    </div>
+    </body>
+    </section>
+
+    <!--Scripts slide-->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script data-class='loading' data-src="https://cdn.jsdelivr.net/npm/@splidejs/splide-auto-scroll@0.6.1/dist/js/splide-auto-scroll.min.js"></script>
+
+    <script>
+      document.addEventListener( 'DOMContentLoaded', function () {
+        new Splide( '.splide', {
+          type   : 'loop',
+          perPage: 4,
+          autoplay: true,
+          gap    : '1rem',
+        } ).mount();
+      } );
+    </script>
+
+   
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col logo-col">
+                <img src="logo.png" alt="Logo BookMovie" class="footer-logo">
+                <button class="join-btn">Rejoindre la communauté</button>
+            </div>
+            <div class="footer-col">
+                <h3>Les bases</h3>
+                <a href="#">À propos</a>
+                <a href="Contact.html">Contact</a>
+                <a href="#">API Documentation</a>
+            </div>
+            <div class="footer-col">
+                <h3>Mentions légales</h3>
+                <a href="#">Conditions d'utilisation</a>
+                <a href="#">Confidentialité</a>
+                <a href="#">API - Conditions</a>
+                <a href="#">Politiques de droits</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup inscription -->
+    <div id="popupInscription" class="modal">
+        <div class="modal-content">
+            <button class="close">&times;</button>
+            <h2>Rejoindre la communauté</h2>
+            <form id="formInscription">
+                <label>Nom :</label>
+                <input type="text" id="nom" required>
+                <label>Prénom :</label>
+                <input type="text" id="prenom" required>
+                <label>Adresse email :</label>
+                <input type="email" id="email" required>
+                <button type="submit" class="submit-btn">S'inscrire</button>
+            </form>
+        </div>
     </div>
 
-    <!-- Menu centré -->
-    <nav>
-      <a href="#">Accueil</a>
-      <a href="#">Inscription</a>
-      <a href="#">mieux nous connaitre</a>
-    </nav>
-  </header>
-
-  <div class="sidebar">
-    <ul>
-        <li>Tous</li>
-        <li>Manga</li>
-        <li>Thriller</li>
-        <li>Classique</li>
-        <li>Science-Fiction</li>
-        <li>Fantaisie</li>
-        <li>Romance</li>
-        <li>Aventure</li>
-        <li>Jeunesse</li>
-        <li>Horreur</li>
-    </ul>
-  </div>
-  <div class="search-container">
-      <input type="text" placeholder="Rechercher...">
-  </div>
-  </div>
 </body>
 </html>
+
 

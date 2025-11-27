@@ -1,126 +1,276 @@
+/* Fond de la page pour vérifier le CSS */
 body {
-    background-color: #ffffff;
+    background-color: hsl(0, 0% ,100%);
+    font-family: Arial, sans-serif;
 }
 
-body {
-      margin: 0;
-      font-family: MExtraBold 800 Italic, sans-serif;
-    }
-    header {
-    position: relative;
-    border: 1px solid #000000;
-    background-color: #72A16B;
-    padding: 30px 0; /* hauteur naturelle */
+/* Barre de navigation */
+.topnav {
+    overflow: hidden;
+    background: linear-gradient(to top, #72A16B, #1C4412);
+    padding: 10px 0;
 }
 
-/* Logo + texte à gauche */
-.logo-container {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-}
-
-.logo-container img {
-    width: 100px;   /* plus petit logo */
-    height: 100px;
-    margin-right: 8px;
-}
-
-.logo-text {
-    font-size: 40px;  /* texte plus petit */
-    font-weight: bold;
-    color: black;
-}
-
-/* Menu centré */
-nav {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
+.topnav a {
+    float: left;
+    color: rgb(255, 255, 255);
     text-decoration: none;
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+.topnav a.active {
+    color: white;
+}
+
+.topnav a:hover {
+    background-color: #038e5d;
     color: black;
-    font-size: 22px;
 }
 
-nav a:hover {
-    color: #000000;
-}
-.sidebar {
-    width: 200px;            /* largeur de la barre */
-    background-color: #72A16B;
-    padding: 10px;
-    height: 100vh;           /* hauteur = toute la page */
-}
-
-.sidebar ul {
-    list-style: none;        /* retirer les puces */
-    padding: 0;
+/* Barre de recherche */
+.topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-right: 5px;
+    margin-top: 8px;
+    font-size: 17px;
 }
 
-.sidebar li {
-    padding: 12px;
-    margin-bottom: 8px;
-    background-color: #CEECCD;
+/* Bouton */
+.topnav button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 10px;
+    background-color: #1C4412;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: 0.2s;
 }
 
-.sidebar li:hover {
-    background-color: #ffffff;
-}
-.search-container {
-    position: fixed;      /* barre toujours visible */
-    top: 15px;            /* distance du haut */
-    right: 15px;          /* distance de la droite */
-    z-index: 2000;
-    width: 220px;
+.topnav button:hover {
+    background-color: #0A8E5D;
 }
 
-.search-container input {
-    width: 100%;
-    padding: 10px 35px 10px 10px; /* espace pour la loupe */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    box-sizing: border-box;
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .topnav a, 
+    .topnav input[type=text], 
+    .topnav button {
+        float: none;
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+}
+/* CONTENEUR DU CARROUSEL */
+.splide__track {
+    background-color: #72A16B; /* fond légèrement foncé */
+    padding: 30px; /* plus d’espace autour des images */
+    border-radius: 15px; /* coins arrondis */
+    margin: 20px;
+    overflow: visible; /* pour que le zoom au hover ne soit pas coupé */
 }
 
-.search-container .search-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    font-size: 18px;
-}
-.top-image {
-    text-align: center;      /* centre l'image horizontalement */
-    margin-top: 50px;        /* espace depuis le haut, ajustable */
+/* CHAQUE SLIDE */
+.splide__slide {
+    height: 250px; /* hauteur des slides plus grande */
+    display: flex;
+    align-items: center;    /* centre verticalement */
+    justify-content: center; /* centre horizontalement */
+    background: rgba(0,0,0,0.05); /* petit fond légèrement plus foncé derrière l’image */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.top-image img {
-    width: 50%;              /* taille moyenne */
-    max-width: 500px;        /* limite maximale */
-    height: auto;            /* garde les proportions */
-    border-radius: 10px;     /* optionnel */
+/* IMAGES DANS LES SLIDES */
+.splide__slide img {
+    max-height: 100%; /* occupe toute la hauteur du slide */
+    width: auto;      /* garde les proportions */
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px; /* coins légèrement arrondis */
 }
 
-nav > a {
-    background-color: #8db387;
-    padding: 4px 10px;
-    border-radius: 12px;
+/* HOVER SUR LES IMAGES */
+.splide__slide img:hover {
+    transform: scale(1.1); /* zoom léger */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); /* ombre pour relief */
 }
-nav > a:hover {
-    background-color: #CEECCD;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+
+/* RESPONSIVE */
+@media screen and (max-width: 600px) {
+    .splide__slide {
+        height: 180px; /* plus petit sur mobile */
+    }
+
+    .splide__slide img {
+        max-height: 100%;
+    }
 }
+#book-reviews {
+  padding: 20px;
+  background-color: rgba(41, 161, 107, 0.1);
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.review-card {
+  background: rgba(0,0,0,0.05);
+  border-radius: 8px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.review-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+.review-card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* --- Footer --- */
+.footer {
+    background: linear-gradient(to bottom, #72A16B, #1C4412);
+    padding: 40px 20px;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-col { 
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.footer-logo { 
+    width: 300px; 
+    margin-bottom: 20px; 
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 4px 0;
+}
+
+.footer a:hover { color: #ddd; }
+
+/* --- Bouton rejoindre la communauté --- */
+.join-btn {
+    display: inline-block;
+    background-color: #0F280B;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.join-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* --- Popup / Modale --- */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    animation: pop 0.3s ease;
+    position: relative;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #1C4412;
+}
+
+.close:hover { 
+    color: #72A16B; 
+}
+
+/* Animation popup */
+@keyframes pop {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Formulaire popup */
+#formInscription {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#formInscription input {
+    padding: 8px;
+    border: 1px solid #72A16B;
+    border-radius: 8px;
+}
+
+.submit-btn {
+    background: #1C4412;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #2f7420; 
+}
+
+/* --- Responsive popup --- */
+@media screen and (max-width: 500px) {
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+}
+
