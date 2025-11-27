@@ -275,6 +275,20 @@ body {
     position: relative;
 }
 
+/* --- Details modal layout (scrollable content + sticky footer) --- */
+.details-content{ display:flex; flex-direction:column; max-height:70vh; width:520px; padding:18px 18px 12px; }
+.details-scroll{ overflow:auto; padding:6px 4px; margin-bottom:12px; }
+.details-scroll h3{ margin:0 0 8px; }
+.details-footer{ display:flex; justify-content:space-between; align-items:center; gap:10px; border-top:1px solid rgba(0,0,0,0.06); padding-top:10px; margin-top:6px; background: linear-gradient(180deg, rgba(255,255,255,0.3), transparent); position:sticky; bottom:0; }
+.details-link{ color:var(--accent); font-weight:700; text-decoration:none; padding:8px 12px; border-radius:8px; background: rgba(3,142,93,0.08); }
+.details-link:hover{ text-decoration:underline; }
+.details-expand{ font-size:13px; padding:6px 10px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); background:transparent; cursor:pointer; }
+.details-expand[aria-hidden="true"]{ display:none; }
+
+@media screen and (max-width: 640px){
+    .details-content{ width:92vw; padding:14px; }
+}
+
 @keyframes pop {
     from { transform: scale(0.7); opacity: 0; }
     to { transform: scale(1); opacity: 1; }

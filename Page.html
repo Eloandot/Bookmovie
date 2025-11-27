@@ -103,6 +103,22 @@
         </div>
     </div>
 
+    <!-- Popup détails livre (ouvert en cliquant sur une carte) -->
+    <div id="popupDetails" class="modal" aria-hidden="true">
+        <div class="modal-content details-content">
+            <button class="close details-close" aria-label="Fermer">&times;</button>
+            <div class="details-scroll" aria-live="polite">
+                <div id="detailsBody" style="min-width:280px;">
+                    <!-- Contenu ajouté dynamiquement : titre / auteur / description -->
+                </div>
+            </div>
+            <div class="details-footer">
+                <a id="detailsLink" href="#" target="_blank" rel="noopener" class="details-link">Voir sur OpenLibrary</a>
+                <button id="detailsExpand" class="details-expand" aria-hidden="true">Lire la suite</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/Page.js" defer></script>
 </body>
 </html>
