@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <!--Barre de navigation-->
+  <!--Barre de recherche-->
  <nav class="topnav">
         <a class="active" href="#home">Recherche</a>
         <a href="#about">À propos</a>
@@ -64,71 +64,20 @@
         } ).mount();
       } );
     </script>
-    <section id="fun-fact-section">
-  <h3>Citation litteraire</h3>
-  <p id="fact-text"></p>
-  <button onclick="getRandomQuote()">Nouvelle citation</button>
+    
+<section id="fun-fact-section">
+    <h3>Citation littéraire</h3>
+    <div id="quote-box">
+        <p id="fact-text"></p>
+    </div>
+    <button id="new-quote-btn">Nouvelle citation</button>
 </section>
 
-<script>
-const quotes = [
-  {quote: "La lecture, c'est la vie.", author: "Victor Hugo"},
-  {quote: "Lire, c'est voyager sans bouger.", author: "Victor Hugo"},
-  {quote: "Un livre est un jardin que l’on porte en poche.", author: "Proverbe arabe"},
-  {quote: "Un lecteur vit mille vies avant de mourir.", author: "George R.R. Martin"},
-  {quote: "Lire, c’est rêver les yeux ouverts.", author: "Victor Hugo"},
-  {quote: "Les livres sont des amis qui ne vous trahissent jamais.", author: "Victor Hugo"},
-  {quote: "On ne naît pas lecteur, on le devient.", author: "Marguerite Yourcenar"},
-  {quote: "La lecture nourrit l’esprit.", author: "Voltaire"},
-  {quote: "La lecture embellit l'âme.", author: "Marcel Proust"},
-  {quote: "La lecture est une amitié.", author: "Ralph Waldo Emerson"}
-];
 
-function getRandomQuote() {
-  const q = quotes[Math.floor(Math.random() * quotes.length)];
-  document.getElementById('fact-text').textContent = `"${q.quote}" — ${q.author}`;
-}
-
-// Affiche une citation dès le départ
-getRandomQuote();
-</script>
-
-<style>
-#fun-fact-section {
-  margin: 40px auto;
-  padding: 20px;
-  background: rgba(114, 161, 107, 0.1);
-  border-radius: 10px;
-  max-width: 600px;
-  text-align: center;
-  color: #1C4412;
-}
-
-#fun-fact-section h3 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
-
-#fun-fact-section p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-#fun-fact-section button {
-  margin-top: 15px;
-  padding: 8px 16px;
-  background-color: #1C4412;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#fun-fact-section button:hover {
-  background-color: #2f7420;
-}
-</style>
-
+<!-- JS Splide -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<!-- Mon JS -->
+<script src="script.js"></script>
 
    
     <!--Footer -->
