@@ -198,9 +198,9 @@ body {
     color: #1C4412;
     font-size: 14px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    -webkit-line-clamp: 2; /* Nombre de lignes */
+    -webkit-box-orient: vertical;/* Orientation du box */
+    overflow: hidden;/* Cache le texte dépassant */
     text-overflow: ellipsis;
 }
 
@@ -346,4 +346,66 @@ body {
         align-items: center;
         gap: 10px;
     }
+}
+/* --- Formulaire de contact --- */
+.contactForm {
+    width: 350px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: fadeIn .4s ease-out;
+}
+
+.contactForm input,
+.contactForm textarea {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+    border-color: #1C4412;
+    box-shadow: 0 0 5px rgba(28, 68, 18, 0.4);
+    outline: none;
+}
+
+.contactForm button {
+    padding: 12px;
+    background: #1C4412;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contactForm button:hover {
+    background: #2f7420;
+    transform: scale(1.03);
+}
+
+/* Message succès */
+#successMsg {
+    font-weight: bold;
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Petite animation d’apparition */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
