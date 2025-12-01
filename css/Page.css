@@ -477,3 +477,69 @@ body {
     font-size: 18px;
     cursor: pointer;
 }
+.politique-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.politique-section h2 {
+    text-align: center;
+    color: #1C4412;
+    margin-bottom: 20px;
+}
+
+.politique-section a {
+    color: #038e5d;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.politique-section a:hover {
+    color: #02663e;
+}
+
+.politique-section ul {
+    margin-left: 20px;
+}
+.api-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.api-section h2 {
+    text-align: center;
+    color: #1C4412;
+    margin-bottom: 20px;
+}
+
+.api-section h3 {
+    color: #1C4412;
+    margin-top: 20px;
+}
+
+.api-section a {
+    color: #038e5d;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.api-section a:hover {
+    color: #02663e;
+}
+
+.api-section pre {
+    background: #e5f0e4;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+}
