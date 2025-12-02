@@ -1,0 +1,372 @@
+/* Fond de la page pour vérifier le CSS */
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Barre de navigation */
+.topnav {
+    overflow: hidden;
+    background: linear-gradient(to top, #72A16B, #1C4412);
+    padding: 10px 0;
+}
+
+.topnav a {
+    float: left;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+.topnav a.active {
+    color: white;
+}
+
+.topnav a:hover {
+    background-color: #038e5d;
+    color: black;
+}
+
+/* Barre de recherche */
+.topnav input[type="text"] {
+    float: right;
+    padding: 6px;
+    margin-right: 5px;
+    margin-top: 8px;
+    font-size: 17px;
+}
+
+/* Bouton */
+.topnav button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 10px;
+    background-color: #1C4412;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.topnav button:hover {
+    background-color: #0A8E5D;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .topnav a,
+    .topnav input[type="text"],
+    .topnav button {
+        float: none;
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+}
+
+/* --- Fond et police globale --- */
+body {
+    background-color: hsl(0, 0%, 100%);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Barre de navigation --- */
+.topnav {
+    overflow: hidden;
+    background: linear-gradient(to top, #72A16B, #1C4412);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-size: 17px;
+    display: inline-block;
+}
+
+.topnav a.active {
+    color: white;
+}
+
+.topnav a:hover {
+    background-color: #038e5d;
+    color: black;
+}
+
+/* --- Texte de bienvenue --- */
+.welcome-text {
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
+
+.welcome-text h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.welcome-text p {
+    font-size: 1.2rem;
+    margin-top: 0;
+    color: #1C4412;
+}
+
+/* --- Titre au-dessus du carrousel --- */
+.carousel-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 10px 0 1px 0;
+    color: #1C4412;
+    font-weight: bold;
+}
+
+/* --- Carrousel--- */
+.splide__track {
+    background-color: rgba(114, 161, 107, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px;
+    overflow: visible;
+}
+
+.splide__slide {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.splide__slide img {
+    max-height: 100%;
+    width: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.splide__slide img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+}
+.search-button-container {
+    text-align: center;       /* centre le bouton horizontalement */
+    margin: 2rem 0;           /* espace au-dessus et en dessous */
+}
+
+.search-btn {
+    background-color: #ff6f61;   /* couleur du bouton */
+    color: white;                /* texte blanc */
+    padding: 0.8rem 1.5rem;      /* taille du bouton */
+    border-radius: 8px;          /* coins arrondis */
+    text-decoration: none;       /* retire le soulignement du lien */
+    font-weight: bold;           /* texte en gras */
+    transition: 0.3s;            /* pour l’effet au survol */
+}
+
+.search-btn:hover {
+    background-color: #ff4a3d;  /* couleur plus foncée au survol */
+    transform: scale(1.05);     /* petit zoom au survol */
+}
+
+.quote-box {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.quote-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem; /* rapproche le titre de la citation */
+  font-weight: bold;
+}
+
+.quote-box {
+    background: rgba(89, 170, 77, 0.507);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(7, 53, 5, 0.822);
+    font-family: 'Roboto', sans-serif;
+}
+
+#quoteBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #1C4412;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+#quoteBtn:hover {
+    background-color: #2d6a1c;
+    transform: translateY(-2px);
+}
+
+
+/* --- Responsive --- */
+@media screen and (max-width: 600px) {
+    .splide__slide {
+        height: 180px;
+    }
+    .welcome-text h1 {
+        font-size: 2rem;
+    }
+    .welcome-text p {
+        font-size: 1rem;
+    }
+    .carousel-title {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* --- Footer --- */
+.footer {
+    background: linear-gradient(to bottom, #72A16B, #1C4412);
+    padding: 40px 20px;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.footer-logo {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 4px 0;
+}
+
+.footer a:hover {
+    color: #ddd;
+}
+
+/* --- Bouton rejoindre la communauté --- */
+.join-btn {
+    display: inline-block;
+    background-color: #0F280B;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.join-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Popup / Modale --- */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    animation: pop 0.3s ease;
+    position: relative;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #1C4412;
+}
+
+.close:hover {
+    color: #72A16B;
+}
+
+/* Animation popup */
+@keyframes pop {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Formulaire popup */
+#formInscription {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#formInscription input {
+    padding: 8px;
+    border: 1px solid #72A16B;
+    border-radius: 8px;
+}
+
+.submit-btn {
+    background: #1C4412;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #2f7420;
+}
+
+/* --- Responsive popup --- */
+@media screen and (max-width: 500px) {
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+}

@@ -1,14 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bookmovie</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="Acceuil.css">
+
+    <!-- CSS du carrousel Splide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
 <body>
-    <p>testst</p>
-    <h1>Hello world</h1>
-    <p>Salut c'est un teste
-    </p>
+
+<!-- Barre de menu -->
+    <nav class="topnav">
+        <a class="active" href="#home">Menu</a>
+        <a href="Apropos.html">À propos</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Page.html">Rechercher</a>
+        <div class="search-container">
+            <input type="text" placeholder="Rechercher un livre..." id="searchInput">
+            <button type="button" id="searchBtn">Rechercher</button>
+        </div>
+    </nav>
+
+<!-- Texte d'accueil -->
+<section class="welcome-text">
+    <h1>Bienvenue sur BookMovie</h1>
+    <p>L'univers des livres pour tous les goûts!</p>
+</section>
+
+<!-- Titre du carrousel -->
+<div class="carousel-title">Notre sélection du moment</div>
+
+<!-- Carrousel Splide -->
+<section class="splide">
+    <div class="splide__track">
+        <ul class="splide__list">
+            <!-- 25 images de livres -->
+            <li class="splide__slide"><img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421539591/one-piece-vol-59-9781421539591_lg.jpg" alt="one piece"></li>
+            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/71pL3SNc13L._SY466_.jpg" alt="la femme de menage"></li>
+            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/51BTfQsu58L._SY445_SX342_ML2_.jpg" alt="harry potter"></li>
+            <li class="splide__slide"><img src="https://cdn.cultura.com/cdn-cgi/image/width=1280/media/pim/16_2d308c44-6382-48e8-8d4a-94422fed8bf6.jpeg" alt="cultura book"></li>
+            <li class="splide__slide"><img src="https://media.senscritique.com/media/000023160825/300/le_boyfriend.jpg" alt="le boyfriend"></li>
+            <li class="splide__slide"><img src="https://images.amazon.com/images/P/2092496174.L.jpg" alt="Tant que fleuririons les citronniers"></li>
+            <li class="splide__slide"><img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421518626/naruto-vol-26-9781421518626_lg.jpg" alt="naruto"></li>
+            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/41jBa+2kKKL._SY445_SX342_ML2_.jpg" alt="palestine"></li>
+            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/41QoYfMluPL.jpg" alt="One punch man"></li>
+            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/71BaBz2cBLL._SY466_.jpg" alt="Dragonball"></li>
+            <li class="splide__slide"><img src="https://media.senscritique.com/media/000016911184/300/les_animaux_fantastiques.jpg" alt="animaux fantastiques"></li>
+            <li class="splide__slide"><img src="https://actu.nathan.fr/fichiers/bd_lecture.png" alt="lecture"></li>
+            <li class="splide__slide"><img src="https://images2.medimops.eu/product/ff26fc/M02264049065-220px.webp" alt="milles soleil splendides"></li>
+            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/71Q3cEt921L._SY466_.jpg" alt="inconnue"></li>
+            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/71BZtEa1TNL._SL1500_.jpg" alt="metamorphose"></li>
+            <li class="splide__slide"><img src="https://media.senscritique.com/media/000000060213/source_big/Brulee_vive.jpg" alt="brûlée vive"></li>
+            <li class="splide__slide"><img src="https://tse1.mm.bing.net/th/id/OIP.pSA4i-UxEATsgcEZiKU1bgHaKP?w=1012&h=1400&rs=1&pid=ImgDetMain&o=7&rm=3" alt="hunter hunter"></li>
+            <li class="splide__slide"><img src="https://www.bedetheque.com/media/Couvertures/Couv_363091.jpg" alt="snk"></li>
+            <li class="splide__slide"><img src="https://media.senscritique.com/media/000017405875/source_big/Incendies.jpg" alt="incendies"></li>
+            <li class="splide__slide"><img src="https://cdn1.booknode.com/book_cover/5774/le_vent_souffle_sur_little_balmoral-5773703-264-432.webp" alt="le vent souffle"></li>
+            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/81eIhYMjWxL._SY425_.jpg" alt="gachikuta"></li>
+            <li class="splide__slide"><img src="https://static.fnac-static.com/multimedia/Images/FR/NR/19/35/d0/13645081/1507-1/tsp20220426060919/Le-soleil-de-minuit.jpg" alt="lsdm"></li>
+            <li class="splide__slide"><img src="https://products-images.di-static.com/image/khaled-hosseini-ainsi-resonne-l-echo-infini-des-montagnes/9782264063496-475x500-1.jpg" alt="ainsi ressone"></li>
+            <li class="splide__slide"><img src="https://cdn1.booknode.com/book_cover/5360/la_psy-5360254-264-432.jpg" alt="la psy"></li>
+        </ul>
+    </div>
+</section>
+
+<!-- Bouton de recherche -->
+<div class="search-button-container">
+    <!-- ouvre la page complète de ton coéquipier -->
+    <a href="Page.html" class="search-btn">🔍 Rechercher un livre</a>
+</div>
+
+<!-- Citation -->
+<div class="quote-box">
+    <h2 class="quote-title">Citation</h2> 
+    <p id="quote">Clique sur le bouton pour découvrir une citation</p>
+    <button id="quoteBtn">Nouvelle citation</button>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col logo-col">
+            <img src="logo.png" alt="Logo BookMovie" class="footer-logo">
+            <button class="join-btn">Rejoindre la communauté</button>
+        </div>
+        <div class="footer-col">
+            <h3>Les bases</h3>
+            <a href="#">À propos</a>
+            <a href="Contact.html">Contact</a>
+            <a href="#">API Documentation</a>
+        </div>
+        <div class="footer-col">
+            <h3>Mentions légales</h3>
+            <a href="#">Conditions d'utilisation</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">API - Conditions</a>
+            <a href="#">Politiques de droits</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Popup inscription -->
+<div id="popupInscription" class="modal">
+    <div class="modal-content">
+        <button class="close">&times;</button>
+        <h2>Rejoindre la communauté</h2>
+        <form id="formInscription">
+            <label>Nom :</label>
+            <input type="text" id="nom" required>
+            <label>Prénom :</label>
+            <input type="text" id="prenom" required>
+            <label>Email :</label>
+            <input type="email" id="email" required>
+            <button type="submit" class="submit-btn">S'inscrire</button>
+        </form>
+    </div>
+</div>
+
+<!-- Scripts externes -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-auto-scroll@0.6.1/dist/js/splide-auto-scroll.min.js"></script>
+
+<!-- Ton JS principal -->
+<script src="Acceuil.js" defer></script>
+
 </body>
 </html>
