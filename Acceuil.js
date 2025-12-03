@@ -1,64 +1,139 @@
-/* ============================================================
-   1) INITIALISATION DU CARROUSEL SPLIDE
-   ============================================================ */
-
-document.addEventListener('DOMContentLoaded', function () {        // Attend que la page soit complètement chargée
-
-  new Splide('.splide', {                                          // Crée un nouveau carrousel Splide dans la zone avec .splide
-
-    type: 'loop',                                                  // Le carrousel recommence au début quand il atteint la fin
-    perPage: 3,                                                    // Nombre d’images visibles en même temps
-    gap: '1rem',                                                   // Espace entre les images
-    arrows: true,                                                  // Affiche les flèches gauche/droite
-    autoplay: true,                                                // Le carrousel défile automatiquement
-    pauseOnHover: true,                                            // L’autoplay se met en pause quand la souris passe dessus
-    pagination: false                                              // Retire les petits points sous le carrousel
-
-  }).mount();                                                      // Active le carrousel pour de vrai
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('.splide', {
+    type: 'loop',
+    perPage: 3,
+    gap: '1rem',
+    arrows: true,
+    autoplay: true,
+    pauseOnHover: true,
+    pagination: false
+  }).mount();
 });
 
+const citations = [];
 
-
-/* ============================================================
-   2) LISTE DES CITATIONS
-   ============================================================ */
-
-const citations = [];                                              // Tableau qui contiendra toutes les citations
-
-
-// Ajoute une citation dans le tableau à chaque ligne
-citations.push("Lire m'a ramené à la vie quand je me suis tuée dans ma réalité. — Marzia Myers");   // 1
-citations.push("Les livres sont des miroirs : on n'y voit que ce qu'on porte en soi. — Carlos Ruiz Zafón"); // 2
-citations.push("On devrait toujours avoir un livre sous la main, au cas où. — Jules Renard");       // 3
-citations.push("Un livre bien choisi vous sauvera de tout, même de vous-même. — Charles Dantzig");  // 4
-citations.push("La lecture est une porte ouverte sur un monde enchanté. — François Mauriac");       // 5
-citations.push("L'homme qui ne lit pas n'a aucun avantage sur celui qui ne sait pas lire. — Mark Twain"); // 6
-citations.push("Les livres sont les compagnons les plus silencieux et constants. — Charles W. Eliot"); // 7
-citations.push("Chaque page tournée est une aventure commencée.");                                   // 8
-citations.push("Ce que tu lis te façonne plus que ce que tu vois.");                                // 9
-citations.push("La lecture est une amitié. — Marcel Proust");                                        // 10
-citations.push("Un lecteur vit mille vies avant de mourir. Celui qui ne lit pas n'en vit qu'une. — George R.R. Martin"); // 11
-citations.push("Lire, c'est voyager ; voyager, c'est lire. — Victor Hugo");                         // 12
-citations.push("Un livre est un rêve que vous tenez entre vos mains. — Neil Gaiman");               // 13
-citations.push("Les livres servent à montrer à l'homme qu'il n'est pas seul. — C.S. Lewis");         // 14
-citations.push("Le monde appartient à ceux qui lisent. — Rick Holland");                            // 15
-citations.push("On ne lit jamais un livre. On se lit à travers les livres. — Alberto Manguel");      // 16
-citations.push("La lecture agrandit l'âme. — Voltaire");                                             // 17
-citations.push("Une pièce sans livres est comme un corps sans âme. — Cicéron");                     // 18
-citations.push("Les mots sont notre plus inépuisable source de magie. — J.K. Rowling");              // 19
-citations.push("Un livre doit être la hache qui brise la mer gelée en nous. — Franz Kafka");         // 20
+//CITATIONS
+citations.push("Lire m'a ramené a la vie quand je me suis tuée dans ma réalité. — Marzia myers");
+citations.push("Les livres sont des miroirs : on n'y voit que ce qu'on porte en soi. — Carlos Ruiz Zafón");
+citations.push("On devrait toujours avoir un livre sous la main, au cas où. — Jules Renard");
+citations.push("Un livre bien choisi vous sauvera de tout, même de vous-même. — Charles Dantzig");
+citations.push("La lecture est une porte ouverte sur un monde enchanté. — François Mauriac");
+citations.push("L'homme qui ne lit pas n'a aucun avantage sur celui qui ne sait pas lire. — Mark Twain");
+citations.push("Les livres sont les compagnons les plus silencieux et constants. — Charles W. Eliot");
+citations.push("Chaque page tournée est une aventure commencée.");
+citations.push("Ce que tu lis te façonne plus que ce que tu vois.");
+citations.push("La lecture est une amitié. — Marcel Proust");
+citations.push("Un lecteur vit mille vies avant de mourir. Celui qui ne lit pas n'en vit qu'une. — George R.R. Martin");
+citations.push("Lire, c'est voyager ; voyager, c'est lire. — Victor Hugo");
+citations.push("Un livre est un rêve que vous tenez entre vos mains. — Neil Gaiman");
+citations.push("Les livres servent à montrer à l'homme qu'il n'est pas seul. — C.S. Lewis");
+citations.push("Le monde appartient à ceux qui lisent. — Rick Holland");
+citations.push("On ne lit jamais un livre. On se lit à travers les livres. — Alberto Manguel");
+citations.push("La lecture agrandit l'âme. — Voltaire");
+citations.push("Une pièce sans livres est comme un corps sans âme. — Cicéron");
+citations.push("Les mots sont notre plus inépuisable source de magie. — J.K. Rowling");
+citations.push("Un livre doit être la hache qui brise la mer gelée en nous. — Franz Kafka");
 
 
 
-/* ============================================================
-   3) AFFICHER UNE CITATION ALÉATOIRE
-   ============================================================ */
+// ------------------ AFFICHAGE ------------------
+const quoteText = document.getElementById('quote');
+const quoteBtn = document.getElementById('quoteBtn');
 
-const quoteText = document.getElementById('quote');               // Zone où la citation va apparaître
-const quoteBtn = document.getElementById('quoteBtn');             // Bouton pour changer de citation
+quoteBtn.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * citations.length);
+    quoteText.textContent = citations[randomIndex];
+});
 
-quoteBtn.addEventListener('click', () => {                        // Quand on clique sur le bouton...
+document.addEventListener('DOMContentLoaded', () => {
 
-    const randomIndex = Math.floor(Math.random() * citations.length); // Choisit un nombre au hasard entre 0 et la taille du tableau
-    quoteText.textContent = citations[randomIndex];                    // Affiche la citation correspondante
+    // ---------------- Carrousel Splide ----------------
+    new Splide('.splide', {
+        type: 'loop',
+        perPage: 5,
+        autoplay: true,
+        interval: 3000,
+        pauseOnHover: true,
+        breakpoints: {
+            1024: { perPage: 3 },
+            768: { perPage: 2 },
+            480: { perPage: 1 }
+        }
+    }).mount();
+
+    // ---------------- Carte Leaflet ----------------
+    let map = L.map('map').setView([46.2276, 2.2137], 6); // France
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    let markers = [];
+
+    const apiKey = "7802a2b523554d69809f64e605f22e51"; // <-- Ta clé Geoapify
+
+    // ---------------- Recherche librairies ----------------
+    const findBtn = document.getElementById("findLibraryBtn");
+    findBtn.addEventListener("click", () => {
+        const city = document.getElementById("cityInput").value.trim();
+        if (!city) {
+            alert("Veuillez entrer une ville.");
+            return;
+        }
+
+        // 1️⃣ Obtenir les coordonnées de la ville avec Geocoding
+        const geoUrl = `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(city + ', France')}&apiKey=${apiKey}`;
+
+        
+        fetch(geoUrl)
+            .then(res => res.json())
+            .then(geoData => {
+                if (!geoData.features || geoData.features.length === 0) {
+                    alert("Ville introuvable.");
+                    return;
+                }
+
+                const { lat, lon } = geoData.features[0].properties;
+
+                // 2️⃣ Calculer un petit rectangle autour de la ville
+                const delta = 0.1; // ~10 km
+                const minLat = lat - delta;
+                const maxLat = lat + delta;
+                const minLon = lon - delta;
+                const maxLon = lon + delta;
+
+                // 3️⃣ Rechercher les librairies
+                const libUrl = `https://api.geoapify.com/v2/places?categories=shop.book&filter=rect:${minLon},${minLat},${maxLon},${maxLat}&limit=10&apiKey=${apiKey}`;
+
+                return fetch(libUrl);
+            })
+            .then(res => res.json())
+            .then(data => {
+
+                // Supprimer anciens marqueurs
+                markers.forEach(m => map.removeLayer(m));
+                markers = [];
+
+                if (!data.features || data.features.length === 0) {
+                    alert("Aucune librairie trouvée dans cette ville.");
+                    return;
+                }
+
+                data.features.forEach(place => {
+                    const coords = [place.geometry.coordinates[1], place.geometry.coordinates[0]];
+                    const marker = L.marker(coords).addTo(map)
+                        .bindPopup(`<b>${place.properties.name}</b><br>${place.properties.address_line1 || ''} ${place.properties.city || ''}`);
+                    markers.push(marker);
+                });
+
+                // Recentrer la carte sur les librairies
+                const group = new L.featureGroup(markers);
+                map.fitBounds(group.getBounds().pad(0.5));
+
+            })
+            .catch(err => {
+                console.error("Erreur API:", err);
+                alert("Erreur lors de la recherche. Vérifiez votre clé API.");
+            });
+    });
+
 });

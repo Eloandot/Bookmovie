@@ -10,6 +10,13 @@
 
     <!-- CSS du carrousel Splide -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+<script src="Acceuil.js" defer></script>
+
 </head>
 <body>
 
@@ -19,6 +26,7 @@
         <a href="Apropos.html">À propos</a>
         <a href="Contact.html">Contact</a>
         <a href="Page.html">Rechercher</a>
+        <a href="librairie.html">bibliothèque</a>
         <div class="search-container">
             <input type="text" placeholder="Rechercher un livre..." id="searchInput">
             <button type="button" id="searchBtn">Rechercher</button>
@@ -27,7 +35,7 @@
 
 <!-- Texte d'accueil -->
 <section class="welcome-text">
-    <h1>Bienvenue sur BookMovie</h1>
+    <h1>Bienvenue sur BookFinder</h1>
     <p>L'univers des livres pour tous les goûts!</p>
 </section>
 
@@ -40,13 +48,13 @@
         <ul class="splide__list">
             <!-- 25 images de livres -->
             <li class="splide__slide"><img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421539591/one-piece-vol-59-9781421539591_lg.jpg" alt="one piece"></li>
-            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/71pL3SNc13L._SY466_.jpg" alt="la femme de menage"></li>
+            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/41jBa+2kKKL._SY445_SX342_ML2_.jpg" alt="Palestine"></li>
             <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/51BTfQsu58L._SY445_SX342_ML2_.jpg" alt="harry potter"></li>
             <li class="splide__slide"><img src="https://cdn.cultura.com/cdn-cgi/image/width=1280/media/pim/16_2d308c44-6382-48e8-8d4a-94422fed8bf6.jpeg" alt="cultura book"></li>
             <li class="splide__slide"><img src="https://media.senscritique.com/media/000023160825/300/le_boyfriend.jpg" alt="le boyfriend"></li>
             <li class="splide__slide"><img src="https://images.amazon.com/images/P/2092496174.L.jpg" alt="Tant que fleuririons les citronniers"></li>
             <li class="splide__slide"><img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421518626/naruto-vol-26-9781421518626_lg.jpg" alt="naruto"></li>
-            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/41jBa+2kKKL._SY445_SX342_ML2_.jpg" alt="palestine"></li>
+            <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/71pL3SNc13L._SL1500_.jpg" alt="lfdm"></li>
             <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/41QoYfMluPL.jpg" alt="One punch man"></li>
             <li class="splide__slide"><img src="https://m.media-amazon.com/images/I/71BaBz2cBLL._SY466_.jpg" alt="Dragonball"></li>
             <li class="splide__slide"><img src="https://media.senscritique.com/media/000016911184/300/les_animaux_fantastiques.jpg" alt="animaux fantastiques"></li>
@@ -67,11 +75,13 @@
     </div>
 </section>
 
-<!-- Bouton de recherche -->
-<div class="search-button-container">
-    <!-- ouvre la page complète de ton coéquipier -->
-    <a href="Page.html" class="search-btn">🔍 Rechercher un livre</a>
+<!-- Encadré avec texte et bouton à l'intérieur -->
+<div class="search-quote-box">
+    <h2 class="search-title">Cliquez just ici pour trouvez vos livres préféré !</h2>
+    <a href="Page.html" class="search-btn">Rechercher un livre</a>
 </div>
+
+
 
 <!-- Citation -->
 <div class="quote-box">
@@ -84,7 +94,7 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col logo-col">
-            <img src="logo.png" alt="Logo BookMovie" class="footer-logo">
+            <img src="https://cdn-photo-origin.pearltrees.com/82/f5/e9/82f5e932a5cad13871d6ba3cadd0bc4f.bin?response-content-type=viewImage&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251203T152124Z&X-Amz-SignedHeaders=host&X-Amz-Expires=30&X-Amz-Credential=AKIA4SMJHWBJF2UEZM6E%2F20251203%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Signature=2df67ce95df64dcc45045946d236c8462c4341e2d773a04e63af9231370251f8" alt="Logo BookFinder" class="footer-logo">
             <button class="join-btn">Rejoindre la communauté</button>
         </div>
         <div class="footer-col">
@@ -126,6 +136,5 @@
 
 <!-- Ton JS principal -->
 <script src="Acceuil.js" defer></script>
-
 </body>
 </html>

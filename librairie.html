@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookFinder - Librairies</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="librairie.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<style>
+    #map { height: 500px; width: 100%; margin-top: 20px; }
+    #cityInput { padding: 10px; width: 200px; }
+    #libSearchBtn { padding: 10px 20px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<!-- Barre de menu -->
+<nav class="topnav">
+    <a href="Acceuil.html">Menu</a>
+    <a href="Apropos.html">À propos</a>
+    <a href="Contact.html">Contact</a>
+    <a href="Page.html">Rechercher</a>
+    <a class="active" href="librairie.html">bibliothèque</a>
+</nav>
+
+<!-- Section Librairie -->
+<section class="library-search-section">
+    <h1>Trouver une librairie ou bibliothèque près de chez vous</h1>
+    <input type="text" id="cityInput" placeholder="Ville">
+    <button id="libSearchBtn">Rechercher</button>
+    <div id="resultContainer"></div>
+    <div id="map"></div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col logo-col">
+            <img class="footer-logo"     src="https://cdn-photo-origin.pearltrees.com/82/f5/e9/82f5e932a5cad13871d6ba3cadd0bc4f.bin?response-content-type=viewImage&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251203T152124Z&X-Amz-SignedHeaders=host&X-Amz-Expires=30&X-Amz-Credential=AKIA4SMJHWBJF2UEZM6E%2F20251203%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Signature=2df67ce95df64dcc45045946d236c8462c4341e2d773a04e63af9231370251f8" alt="logo">
+            <button class="join-btn">Rejoindre la communauté</button>
+        </div>
+        <div class="footer-col">
+            <h3>Les bases</h3>
+            <a href="Apropos.html">À propos</a>
+            <a href="Contact.html">Contact</a>
+            <a href="#">API Documentation</a>
+        </div>
+        <div class="footer-col">
+            <h3>Mentions légales</h3>
+            <a href="#">Conditions d'utilisation</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">API - Conditions</a>
+            <a href="#">Politiques de droits</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="Librairie.js"></script>
+
+</body>
+</html>
