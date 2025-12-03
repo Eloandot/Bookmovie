@@ -50,13 +50,31 @@ body {
     color: white;
 }
 
-/* --- Barre de recherche et bouton aligné --- */
+/* --- Section filtres --- */
+#filtre {
+    background-color: #72A16B;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* --- CORRECTION : Barre de recherche centrée --- */
+.filtre-header {
+    display: flex;
+    flex-direction: column;  /* barre au-dessus, filtres en dessous */
+    align-items: center;     /* centre horizontalement tout le contenu */
+    gap: 15px;               /* espace entre barre et filtres */
+    margin: 0 auto;
+}
+
 .search-container {
-    float: right;
     display: flex;
     gap: 5px;
     align-items: center;
-    margin-right: 16px;
+    justify-content: center; /* centre input + bouton */
+    margin: 0;               /* supprime anciens margin-right */
 }
 
 .search-container input {
@@ -79,22 +97,12 @@ body {
 
 .search-container button:hover {
     background-color: #02663e;
-    text-align: center;
 }
 
-/* --- Section filtres --- */
-#filtre {
-    background-color: #72A16B;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
+/* --- Barre de filtres --- */
 .filtre-liste {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* centre les filtres */
     column-gap: 20px;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -108,7 +116,6 @@ body {
     border-radius: 10px;
 }
 
-/* Bouton Filtrer dans la section filtres */
 .filter-btn {
     padding: 6px 15px;
     font-size: 16px;
@@ -199,9 +206,9 @@ body {
     color: #1C4412;
     font-size: 14px;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Nombre de lignes */
-    -webkit-box-orient: vertical;/* Orientation du box */
-    overflow: hidden;/* Cache le texte dépassant */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 
@@ -228,23 +235,19 @@ body {
     align-items: center;
 }
 
-/* --- Colonne logo --- */
 .logo-col {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* pas de justify-content, pas de hauteur fixe */
 }
 
-/* --- Logo --- */
 .footer-logo { 
     max-width: 200px; 
     width: 100%;
     height: auto;
-    margin-bottom: 5px; /* espace minime entre logo et bouton */
+    margin-bottom: 5px;
 }
 
-/* --- Liens du footer --- */
 .footer a {
     color: #ffffff;
     text-decoration: none;
@@ -255,7 +258,6 @@ body {
     color: #ddd; 
 }
 
-/* --- Bouton --- */
 .join-btn {
     display: inline-block;
     background-color: #0F280B;
@@ -264,7 +266,7 @@ body {
     color: white;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin: 0; /* aucun espace ajouté */
+    margin: 0;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -273,8 +275,7 @@ body {
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
-
-/* --- Modale (ancienne modale pour détails) --- */
+/* --- Modal & Popups --- */
 .modal {
     display: none;
     position: fixed;
@@ -284,35 +285,20 @@ body {
     height: 100%;
     background: rgba(0,0,0,0.5);
     z-index: 9999;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
     background: white;
     margin: 10% auto;
     padding: 20px;
-    width: 400px;
+    width: 90%;
+    max-width: 500px;
     border-radius: 10px;
-    animation: pop 0.3s ease;
-    position: relative;
-}
-
-/* --- Details modal layout (scrollable content + sticky footer) --- */
-.details-content{ display:flex; flex-direction:column; max-height:70vh; width:520px; padding:18px 18px 12px; }
-.details-scroll{ overflow:auto; padding:6px 4px; margin-bottom:12px; }
-.details-scroll h3{ margin:0 0 8px; }
-.details-footer{ display:flex; justify-content:space-between; align-items:center; gap:10px; border-top:1px solid rgba(0,0,0,0.06); padding-top:10px; margin-top:6px; background: linear-gradient(180deg, rgba(255,255,255,0.3), transparent); position:sticky; bottom:0; }
-.details-link{ color:var(--accent); font-weight:700; text-decoration:none; padding:8px 12px; border-radius:8px; background: rgba(3,142,93,0.08); }
-.details-link:hover{ text-decoration:underline; }
-.details-expand{ font-size:13px; padding:6px 10px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); background:transparent; cursor:pointer; }
-.details-expand[aria-hidden="true"]{ display:none; }
-
-@media screen and (max-width: 640px){
-    .details-content{ width:92vw; padding:14px; }
-}
-
-@keyframes pop {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .close {
@@ -325,33 +311,6 @@ body {
 
 .close:hover { color: #72A16B; }
 
-/* --- Formulaire --- */
-#formInscription {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-#formInscription input {
-    padding: 8px;
-    border: 1px solid #72A16B;
-    border-radius: 8px;
-}
-
-.submit-btn {
-    background: #1C4412;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.submit-btn:hover {
-    background: #2f7420; 
-}
-
 /* --- Responsive --- */
 @media screen and (max-width: 500px) {
     .modal-content {
@@ -363,273 +322,4 @@ body {
         align-items: center;
         gap: 10px;
     }
-}
-/* --- Formulaire de contact --- */
-.contactForm {
-    width: 350px;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    animation: fadeIn .4s ease-out;
-}
-
-.contactForm input,
-.contactForm textarea {
-    padding: 12px;
-    font-size: 16px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.contactForm input:focus,
-.contactForm textarea:focus {
-    border-color: #1C4412;
-    box-shadow: 0 0 5px rgba(28, 68, 18, 0.4);
-    outline: none;
-}
-
-.contactForm button {
-    padding: 12px;
-    background: #1C4412;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.contactForm button:hover {
-    background: #2f7420;
-    transform: scale(1.03);
-}
-
-/* Message succès */
-#successMsg {
-    font-weight: bold;
-    color: green;
-    text-align: center;
-    margin-top: 20px;
-    animation: fadeIn 0.5s ease-out;
-}
-
-/* Petite animation d’apparition */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* --- POPUP INSCRIPTION --- */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 999999 !important;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: white;
-    padding: 30px;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 12px;
-    position: relative;
-    z-index: 1000000;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.modal h2 {
-    margin-top: 0;
-    font-size: 22px;
-    text-align: center;
-}
-
-.modal label {
-    font-weight: 600;
-    color: #234522;
-}
-
-.modal input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #3f773c;
-    border-radius: 6px;
-}
-
-.modal button {
-    background: #234522;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.modal button:hover {
-    background: #1a3819;
-}
-
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: transparent;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-}
-.politique-section {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    font-family: 'Roboto', sans-serif;
-}
-
-.politique-section h2 {
-    text-align: center;
-    color: #1C4412;
-    margin-bottom: 20px;
-}
-
-.politique-section a {
-    color: #038e5d;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.politique-section a:hover {
-    color: #02663e;
-}
-
-.politique-section ul {
-    margin-left: 20px;
-}
-.api-section {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    font-family: 'Roboto', sans-serif;
-}
-
-.api-section h2 {
-    text-align: center;
-    color: #1C4412;
-    margin-bottom: 20px;
-}
-
-.api-section h3 {
-    color: #1C4412;
-    margin-top: 20px;
-}
-
-.api-section a {
-    color: #038e5d;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.api-section a:hover {
-    color: #02663e;
-}
-
-.api-section pre {
-    background: #e5f0e4;
-    padding: 12px;
-    border-radius: 6px;
-    overflow-x: auto;
-}
-
-body {
-    background-color: white;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    color: #1C4412;
-}
-
-/* --- En-tête --- */
-header {
-    background-color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.titre-principal {
-    color: #1C4412;
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* --- Sections principales --- */
-.politique-section,
-.api-section {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    font-family: 'Roboto', sans-serif;
-}
-
-.politique-section h2,
-.api-section h2 {
-    text-align: center;
-    color: #1C4412;
-    margin-bottom: 20px;
-}
-
-.politique-section ul,
-.api-section ul {
-    margin-left: 20px;
-    list-style-type: disc;
-}
-
-.politique-section li,
-.api-section li {
-    margin: 8px 0;
-}
-
-/* --- Liens --- */
-.politique-section a,
-.api-section a {
-    color: #038e5d;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.politique-section a:hover,
-.api-section a:hover {
-    color: #02663e;
-}
-
-/* --- Pied de page --- */
-footer {
-    background: linear-gradient(to bottom, #72A16B, #1C4412);
-    padding: 40px 20px;
-    color: white;
-    border-radius: 10px 10px 0 0;
-    text-align: center;
-    box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
 }
