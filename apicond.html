@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions d’utilisation – Open Library</title>
+    <link rel="stylesheet" href="css/Page.css">
+</head>
+<body>
+   <!-- Barre de menu -->
+    <nav class="topnav">
+        <a class="active" href="#home">Menu</a>
+        <a href="Apropos.html">À propos</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Page.html">Rechercher</a>
+    </nav>
+
+    <div>
+        <section class="api-section">
+            <h2>Conditions d’Utilisation – Open Library</h2>
+
+            <h3>1. Accès et utilisation</h3>
+            <p>L’accès aux données fournies par l’API <strong>Open Library</strong> est gratuit. Les informations récupérées via cette API sont destinées uniquement à un usage personnel ou éducatif et doivent respecter les règles et les limitations définies par Open Library.</p>
+
+            <h3>2. Exactitude des données</h3>
+            <p>Nous faisons de notre mieux pour présenter des informations précises et à jour. Cependant, nous ne garantissons pas l’exactitude, l’exhaustivité ou l’actualité des données fournies par l’API Open Library.</p>
+
+            <h3>3. Propriété intellectuelle</h3>
+            <p>Les contenus et données récupérés via l’API Open Library restent la propriété de leurs auteurs respectifs ou de l’organisation Open Library. Toute reproduction, distribution ou utilisation commerciale des données sans autorisation préalable est interdite.</p>
+
+            <h3>4. Limitation de responsabilité</h3>
+            <p>Nous ne sommes pas responsables des erreurs ou des omissions dans les données provenant de l’API Open Library. L’utilisation des informations se fait à vos propres risques.</p>
+
+            <h3>5. Modifications et disponibilité</h3>
+            <p>L’API Open Library peut être modifiée ou suspendue à tout moment par ses développeurs. Nous ne garantissons pas un accès continu ou ininterrompu aux données de l’API.</p>
+
+            <h3>6. Liens vers Open Library</h3>
+            <p>Les liens et références vers Open Library doivent être utilisés conformément à leurs conditions d’utilisation et doivent toujours mentionner la source. Pour plus d’informations, consultez le <a href="https://openlibrary.org/developers/api" target="_blank">site officiel d’Open Library</a>.</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col logo-col">
+                <img src="image/logobf.png" alt="Logo BookFinder" class="footer-logo">
+                <button class="join-btn">Rejoindre la communauté</button>
+            </div>
+            <div class="footer-col">
+                <h3>Les bases</h3>
+                <a href="Apropos.html">À propos</a>
+                <a href="Contact.html">Contact</a>
+                <a href="apidoc.html">API Documentation</a>
+            </div>
+            <div class="footer-col">
+                <h3>Mentions légales</h3>
+                <a href="condition.html">Conditions d’utilisation</a>
+                <a href="confidentialitées.html">Confidentialité</a>
+                <a href="apicond.html">API – Conditions</a>
+            </div>
+        </div>
+
+        <!-- Popup inscription -->
+        <div id="popupInscription" class="modal">
+            <div class="modal-content">
+                <button class="close">&times;</button>
+                <h2>Rejoindre la communauté</h2>
+                <form id="formInscription">
+                    <label>Nom :</label>
+                    <input type="text" id="nom" required>
+
+                    <label>Prénom :</label>
+                    <input type="text" id="prenom" required>
+
+                    <label>Adresse email :</label>
+                    <input type="email" id="email" required>
+
+                    <button type="submit" class="submit-btn">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/Page.js" defer></script>
+</body>
+</html>

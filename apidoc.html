@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/Page.css">
+</head>
+<body>
+   <!-- Barre de menu -->
+    <nav class="topnav">
+        <a class="active" href="#home">Menu</a>
+        <a href="Apropos.html">À propos</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Page.html">Rechercher</a>
+
+    </nav>
+    <section id="api-documentation" class="api-section">
+    <h2>Documentation de l’API – BoookMovie (Open Library)</h2>
+
+    <p>BoookMovie utilise l’API <a href="https://openlibrary.org/developers/api" target="_blank">Open Library</a> pour récupérer les données sur les livres. Cette API est gratuite et accessible aux développeurs souhaitant intégrer des informations sur les livres dans leurs applications ou sites web.</p>
+
+    <h3>1. Base URL</h3>
+    <p>Toutes les requêtes utilisent l’URL suivante :</p>
+    <pre>https://openlibrary.org/</pre>
+
+    <h3>2. Endpoints principaux</h3>
+    <ul>
+        <li><strong>/search.json?q=mot_clé</strong> : Recherche de livres par titre, auteur ou sujet.</li>
+        <li><strong>/works/OLID.json</strong> : Récupère les détails d’un livre à partir de son OLID (Open Library ID).</li>
+        <li><strong>/authors/OLID.json</strong> : Récupère les informations sur un auteur via son OLID.</li>
+    </ul>
+
+    <h3>3. Paramètres courants</h3>
+    <ul>
+        <li><strong>q</strong> : Mot-clé pour la recherche (titre, auteur, ISBN, sujet).</li>
+        <li><strong>limit</strong> : Nombre de résultats retournés (par défaut 100).</li>
+        <li><strong>page</strong> : Numéro de page pour la pagination.</li>
+    </ul>
+
+    <h3>4. Exemple de requête pour rechercher un livre</h3>
+    <pre>
+GET https://openlibrary.org/search.json?q=harry+potter&limit=5
+    </pre>
+
+    <h3>5. Exemple de récupération des détails d’un livre</h3>
+    <pre>
+GET https://openlibrary.org/works/OL82563W.json
+    </pre>
+
+    <h3>6. Exemple en JavaScript (fetch)</h3>
+    <pre>
+fetch('https://openlibrary.org/search.json?q=harry+potter&limit=5')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+    </pre>
+
+    <h3>7. Codes de réponse</h3>
+    <ul>
+        <li><strong>200 OK</strong> : Requête réussie.</li>
+        <li><strong>404 Not Found</strong> : Ressource introuvable.</li>
+        <li><strong>500 Internal Server Error</strong> : Erreur côté serveur Open Library.</li>
+    </ul>
+
+    <h3>8. Support et documentation officielle</h3>
+    <p>Pour plus de détails sur l’API Open Library, consultez leur <a href="https://openlibrary.org/developers/api" target="_blank">documentation officielle</a>.</p>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col logo-col">
+                <img src="image/logobf.png" alt="Logo BookFinder" class="footer-logo">
+                <button class="join-btn">Rejoindre la communauté</button>
+            </div>
+            <div class="footer-col">
+                <h3>Les bases</h3>
+                <a href="Apropos.html">À propos</a>
+                <a href="Contact.html">Contact</a>
+                <a href="#">API Documentation</a>
+            </div>
+            <div class="footer-col">
+                <h3>Mentions légales</h3>
+                <a href="condition.html">Conditions d’utilisation</a>
+                <a href="confidentialitées.html">Confidentialité</a>
+                <a href="apicond.html">API – Conditions</a>
+                
+            </div>
+        </div>
+    </footer>
+    <!-- Popup inscription -->
+<div id="popupInscription" class="modal">
+    <div class="modal-content">
+        <button class="close">&times;</button>
+        <h2>Rejoindre la communauté</h2>
+        <form id="formInscription">
+            <label>Nom :</label>
+            <input type="text" id="nom" required>
+
+            <label>Prénom :</label>
+            <input type="text" id="prenom" required>
+
+            <label>Adresse email :</label>
+            <input type="email" id="email" required>
+
+            <button type="submit" class="submit-btn">S'inscrire</button>
+        </form>
+    </div>
+</div>
+    <script src="js/Page.js" defer></script>
+    </body>
+</html>

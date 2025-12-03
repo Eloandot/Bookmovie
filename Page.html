@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMovie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Page.css">
+</head>
+<body>
+
+    <!-- Barre de menu -->
+    <nav class="topnav">
+        <a class="active" href="#home">Menu</a>
+        <a href="Apropos.html">À propos</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Page.html">Rechercher</a>
+        <div class="search-container">
+            <input type="text" placeholder="Rechercher un livre..." id="searchInput">
+            <button type="button" id="searchBtn">Rechercher</button>
+        </div>
+    </nav>
+
+    <!-- Titre principal -->
+    <header>
+        <h1 class="titre-principal">Livres et Mangas</h1>
+        <p class="petits-texte">Cherchez et trouvez les livres et mangas de votre choix</p>
+    </header>
+
+    <!-- Section Filtres -->
+    <section id="filtre">
+        <h2 class="titre-filtre">Filtres</h2>
+        <div class="filtre-liste">
+            <div>
+                <p class="texte-filtre">Type</p>
+                <select id="choixType" class="choix">
+                    <option value="all">Tous</option>
+                    <option value="books">Livres</option>
+                    <option value="mangas">Mangas</option>
+                </select>
+            </div>
+            <div>
+                <p class="texte-filtre">Trier par</p>
+                <select id="choixTri" class="choix">
+                    <option value="title">Ordre alphabétique</option>
+                    <option value="year">Le plus récent</option>
+                </select>
+            </div>
+            <div>
+                <p class="texte-filtre">&nbsp;</p>
+                <button id="filterBtn" class="filter-btn">Filtrer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrousel horizontal scrollable -->
+    <div class="carousel-wrapper">
+        <div class="Livres" id="results">
+            <!-- Cartes générées par JS -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col logo-col">
+                <img src="image/logobf.png" alt="Logo BookFinder" class="footer-logo">
+                <button class="join-btn">Rejoindre la communauté</button>
+            </div>
+            <div class="footer-col">
+                <h3>Les bases</h3>
+                <a href="Apropos.html">À propos</a>
+                <a href="Contact.html">Contact</a>
+                <a href="apidoc.html">API Documentation</a>
+            </div>
+            <div class="footer-col">
+                <h3>Mentions légales</h3>
+                <a href="condition.html">Conditions d’utilisation</a>
+                <a href="confidentialitées.html">Confidentialité</a>
+                <a href="apicond.html">API – Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup inscription -->
+    <div id="popupInscription" class="modal">
+        <div class="modal-content">
+            <button class="close">&times;</button>
+            <h2>Rejoindre la communauté</h2>
+            <form id="formInscription">
+                <label>Nom :</label>
+                <input type="text" id="nom" required>
+
+                <label>Prénom :</label>
+                <input type="text" id="prenom" required>
+
+                <label>Adresse email :</label>
+                <input type="email" id="email" required>
+
+                <button type="submit" class="submit-btn">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup détails livre (ouvert en cliquant sur une carte) -->
+    <div id="popupDetails" class="modal" aria-hidden="true">
+        <div class="modal-content details-content">
+            <button class="close details-close" aria-label="Fermer">&times;</button>
+            <div class="details-scroll" aria-live="polite">
+                <div id="detailsBody" style="min-width:280px;">
+                    <!-- Contenu ajouté dynamiquement : titre / auteur / description -->
+                </div>
+            </div>
+            <div class="details-footer">
+                <a id="detailsLink" href="#" target="_blank" rel="noopener" class="details-link">Voir sur OpenLibrary</a>
+                <button id="detailsExpand" class="details-expand" aria-hidden="true">Lire la suite</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/Page.js" defer></script>
+</body>
+</html>

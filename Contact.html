@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/Page.css">
+</head>
+<body>
+    <div>
+           <!-- Barre de menu -->
+    <nav class="topnav">
+        <a class="active" href="#home">Menu</a>
+        <a href="Apropos.html">À propos</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Page.html">Rechercher</a>
+    </div>
+
+    <h1 class="titre-principal">Contactez-nous</h1>
+    <h3 class="texte-contact">Nous serions ravis de vous aider ou de répondre à vos questions.</h3>
+    <p class="texte-contact"><strong>Email :</strong> contact@bookmovie.com</p>
+    <p class="texte-contact"><strong>Téléphone :</strong> +33 7 69 29 06 39</p>
+    <p class="texte-contact"><strong>Adresse :</strong> 120 Rue de Verdin, 92800 Puteaux, France</p>
+    <h1 class=" texte-contact">Voilà un formulaire pour nous envoyer un message !</h1>
+
+    <div id="successMsg" style="display:none; color: green; text-align:center; margin-top:20px;">
+        Message bien envoyé !
+    </div>
+
+    <div>
+        <form class="contactForm">
+            <label>Nom :</label>
+            <input type="text" name="nom" required>
+
+            <label>Email :</label>
+            <input type="email" name="email" required>
+
+            <label>Message :</label>
+            <textarea name="message" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col logo-col">
+                <img src="image/logobf.png" alt="Logo BookFinder" class="footer-logo">
+                <button class="join-btn">Rejoindre la communauté</button>
+            </div>
+            <div class="footer-col">
+                <h3>Les bases</h3>
+                <a href="Apropos.html">À propos</a>
+                <a href="#">Contact</a>
+                <a href="apidoc.html">API Documentation</a>
+            </div>
+            <div class="footer-col">
+                <h3>Mentions légales</h3>
+                <a href="condition.html">Conditions d’utilisation</a>
+                <a href="confidentialitées.html">Confidentialité</a>
+                <a href="apicond.html">API – Conditions</a>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup inscription -->
+    <div id="popupInscription" class="modal">
+        <div class="modal-content">
+            <button class="close">&times;</button>
+            <h2>Rejoindre la communauté</h2>
+            <form id="formInscription">
+                <label>Nom :</label>
+                <input type="text" id="nom" required>
+
+                <label>Prénom :</label>
+                <input type="text" id="prenom" required>
+
+                <label>Adresse email :</label>
+                <input type="email" id="email" required>
+
+                <button type="submit" class="submit-btn">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/Page.js" defer></script>
+</body>
+</html>
