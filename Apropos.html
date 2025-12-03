@@ -1,22 +1,66 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>àppropos</title>
     <link rel="stylesheet" href="css/Page.css">
 </head>
-<body>
-    <div>
-     <!-- Barre de menu -->
+  
+    <!-- Barre de menu -->
     <nav class="topnav">
         <a class="active" href="#home">Menu</a>
         <a href="Apropos.html">À propos</a>
         <a href="Contact.html">Contact</a>
         <a href="Page.html">Rechercher</a>
-    </div>
-    <h1 class="titre-principal">En savoir plus sur notre projet</h1>
+        <a href="#">Bibliothèques</a>
+    </nav>
+    
+    <!-- En-tête -->
+    <header>
+        <h1 class="titre-principal">À propos de notre projet Web</h1>
+    </header>
 
-     <footer class="footer">
+    <!-- Contenu principal -->
+    <main>
+        <!-- Section Présentation -->
+        <section class="politique-section">
+            <h2>Présentation</h2>
+            <p>Notre projet consiste à créer un site web permettant de rechercher des livres par titre et d'obtenir toutes les informations disponibles : auteur, date de publication, résumé, etc. L'objectif est de fournir une interface simple et claire pour tous les utilisateurs.</p>
+        </section>
+
+        <!-- Section Comment nous avons réalisé le projet -->
+        <section class="api-section">
+            <h2>Comment nous avons réalisé le projet</h2>
+            <ul>
+                <li>Définition des besoins et des fonctionnalités principales.</li>
+                <li>Création de la structure HTML pour les pages et la navigation.</li>
+                <li>Ajout du style avec CSS pour un design clair, moderne et cohérent avec le reste du site.</li>
+                <li>Écriture de scripts JavaScript pour gérer la recherche et l'affichage des livres.</li>
+                <li>Tests avec des données fictives avant intégration à une API ou une base de données.</li>
+            </ul>
+        </section>
+
+        <!-- Section Technologies utilisées -->
+        <section class="politique-section">
+            <h2>Technologies utilisées</h2>
+            <ul>
+                <li>HTML pour la structure des pages.</li>
+                <li>CSS pour le style et le design.</li>
+                <li>JavaScript pour l’interactivité et la recherche dynamique.</li>
+            </ul>
+        </section>
+
+        <!-- Section Équipe -->
+        <section class="api-section">
+            <h2>Notre équipe</h2>
+            <ul>
+                <li>Eloan Léton Cunegatti</li>
+                <li>Ines Boual</li>
+            </ul>
+        </section>
+<!-- Footer -->
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-col logo-col">
                 <img src="image/logobf.png" alt="Logo BookFinder" class="footer-logo">
@@ -32,10 +76,11 @@
                 <h3>Mentions légales</h3>
                 <a href="condition.html">Conditions d’utilisation</a>
                 <a href="confidentialitées.html">Confidentialité</a>
-               
+                <a href="apicond.html">API – Conditions</a>
             </div>
         </div>
     </footer>
+
     <!-- Popup inscription -->
     <div id="popupInscription" class="modal">
         <div class="modal-content">
@@ -55,6 +100,25 @@
             </form>
         </div>
     </div>
-        <script src="js/Page.js" defer></script>
+
+    <!-- Popup détails livre (ouvert en cliquant sur une carte) -->
+    <div id="popupDetails" class="modal" aria-hidden="true">
+        <div class="modal-content details-content">
+            <button class="close details-close" aria-label="Fermer">&times;</button>
+            <div class="details-scroll" aria-live="polite">
+                <div id="detailsBody" style="min-width:280px;">
+                    <!-- Contenu ajouté dynamiquement : titre / auteur / description -->
+                </div>
+            </div>
+            <div class="details-footer">
+                <a id="detailsLink" href="#" target="_blank" rel="noopener" class="details-link">Voir sur OpenLibrary</a>
+                <button id="detailsExpand" class="details-expand" aria-hidden="true">Lire la suite</button>
+            </div>
+        </div>
+    </div>
+    </main>
+
+<script src="js/Page.js" defer></script>
+    
 </body>
 </html>

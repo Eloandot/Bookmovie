@@ -13,12 +13,12 @@
         <a href="Apropos.html">À propos</a>
         <a href="Contact.html">Contact</a>
         <a href="Page.html">Rechercher</a>
-
+        <a href="#">Bibliothèques</a>
     </nav>
     <section id="api-documentation" class="api-section">
     <h2>Documentation de l’API – BoookMovie (Open Library)</h2>
 
-    <p>BoookMovie utilise l’API <a href="https://openlibrary.org/developers/api" target="_blank">Open Library</a> pour récupérer les données sur les livres. Cette API est gratuite et accessible aux développeurs souhaitant intégrer des informations sur les livres dans leurs applications ou sites web.</p>
+    <p>BookFinder utilise l’API <a href="https://openlibrary.org/developers/api" target="_blank">Open Library</a> pour récupérer les données sur les livres. Cette API est gratuite et accessible aux développeurs souhaitant intégrer des informations sur les livres dans leurs applications ou sites web.</p>
 
     <h3>1. Base URL</h3>
     <p>Toutes les requêtes utilisent l’URL suivante :</p>
@@ -40,20 +40,20 @@
 
     <h3>4. Exemple de requête pour rechercher un livre</h3>
     <pre>
-GET https://openlibrary.org/search.json?q=harry+potter&limit=5
+        GET https://openlibrary.org/search.json?q=harry+potter&limit=5
     </pre>
 
     <h3>5. Exemple de récupération des détails d’un livre</h3>
     <pre>
-GET https://openlibrary.org/works/OL82563W.json
+        GET https://openlibrary.org/works/OL82563W.json
     </pre>
 
     <h3>6. Exemple en JavaScript (fetch)</h3>
     <pre>
-fetch('https://openlibrary.org/search.json?q=harry+potter&limit=5')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+    fetch('https://openlibrary.org/search.json?q=harry+potter&limit=5')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
     </pre>
 
     <h3>7. Codes de réponse</h3>

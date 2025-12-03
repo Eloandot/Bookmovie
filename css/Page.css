@@ -79,6 +79,7 @@ body {
 
 .search-container button:hover {
     background-color: #02663e;
+    text-align: center;
 }
 
 /* --- Section filtres --- */
@@ -558,4 +559,77 @@ body {
     padding: 12px;
     border-radius: 6px;
     overflow-x: auto;
+}
+
+body {
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #1C4412;
+}
+
+/* --- En-tête --- */
+header {
+    background-color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.titre-principal {
+    color: #1C4412;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* --- Sections principales --- */
+.politique-section,
+.api-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.politique-section h2,
+.api-section h2 {
+    text-align: center;
+    color: #1C4412;
+    margin-bottom: 20px;
+}
+
+.politique-section ul,
+.api-section ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.politique-section li,
+.api-section li {
+    margin: 8px 0;
+}
+
+/* --- Liens --- */
+.politique-section a,
+.api-section a {
+    color: #038e5d;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.politique-section a:hover,
+.api-section a:hover {
+    color: #02663e;
+}
+
+/* --- Pied de page --- */
+footer {
+    background: linear-gradient(to bottom, #72A16B, #1C4412);
+    padding: 40px 20px;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
 }

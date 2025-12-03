@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookMovie</title>
+    <title>Recherches</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/Page.css">
 </head>
@@ -15,10 +15,7 @@
         <a href="Apropos.html">À propos</a>
         <a href="Contact.html">Contact</a>
         <a href="Page.html">Rechercher</a>
-        <div class="search-container">
-            <input type="text" placeholder="Rechercher un livre..." id="searchInput">
-            <button type="button" id="searchBtn">Rechercher</button>
-        </div>
+        <a href="#">Bibliothèques</a>
     </nav>
 
     <!-- Titre principal -->
@@ -29,6 +26,11 @@
 
     <!-- Section Filtres -->
     <section id="filtre">
+    <div class="filtre-header">
+        <div class="search-container">
+            <input type="text" placeholder="Rechercher un livre..." id="searchInput">
+            <button type="button" id="searchBtn">Rechercher</button>
+        </div>
         <h2 class="titre-filtre">Filtres</h2>
         <div class="filtre-liste">
             <div>
@@ -51,7 +53,9 @@
                 <button id="filterBtn" class="filter-btn">Filtrer</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Carrousel horizontal scrollable -->
     <div class="carousel-wrapper">
