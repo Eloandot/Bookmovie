@@ -224,31 +224,46 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 150px;
+    align-items: center;
 }
 
+/* --- Colonne logo --- */
+.logo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* pas de justify-content, pas de hauteur fixe */
+}
+
+/* --- Logo --- */
 .footer-logo { 
-    width: 180px; 
-    margin-bottom: 20px; 
+    max-width: 200px; 
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px; /* espace minime entre logo et bouton */
 }
 
+/* --- Liens du footer --- */
 .footer a {
     color: #ffffff;
     text-decoration: none;
     margin: 4px 0;
 }
 
-.footer a:hover { color: #ddd; }
+.footer a:hover { 
+    color: #ddd; 
+}
 
-/* --- Bouton rejoindre --- */
+/* --- Bouton --- */
 .join-btn {
     display: inline-block;
     background-color: #0F280B;
     padding: 10px 20px;
     border-radius: 8px;
     color: white;
-    margin-top: 10px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin: 0; /* aucun espace ajouté */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -256,6 +271,7 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
+
 
 /* --- Modale (ancienne modale pour détails) --- */
 .modal {
